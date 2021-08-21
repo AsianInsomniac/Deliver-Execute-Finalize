@@ -51,7 +51,7 @@ exports.login = function (req,res) {
       //  console.log(username);
       //  console.log(password);
      
-      if(username == "admin" && password == "abcd1234"){
+      if(username == "admin_terra" && password == "terra_password"){
           
           res.redirect("/mainMenu/lib")
       }
