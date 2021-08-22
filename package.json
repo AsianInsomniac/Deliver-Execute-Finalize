@@ -1,5 +1,32 @@
 {
   "dependencies": {
-    "node": "^16.6.1"
-  }
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^4.5.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "hbs": "^4.1.2",
+    "mongoose": "^5.13.7",
+    "node": "^16.6.1",
+    "path": "^0.12.7"
+  },
+  "name": "deliver-execute-finalize",
+  "description": "By CSSWENG Team 1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AsianInsomniac/Deliver-Execute-Finalize.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AsianInsomniac/Deliver-Execute-Finalize/issues"
+  },
+  "homepage": "https://github.com/AsianInsomniac/Deliver-Execute-Finalize#readme"
 }
