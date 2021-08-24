@@ -4,7 +4,9 @@ const controller = {
     },
 
     getIndex: function (req, res) {
-		res.render('index');
+		  
+      // if (req.session.idNum)
+      res.render('index');
     }
 }
 
