@@ -17,7 +17,11 @@
   "description": "By CSSWENG Team 1",
   "version": "1.0.0",
   "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
   "scripts": {
+    "watch": "nodemon ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,4 +34,5 @@
     "url": "https://github.com/AsianInsomniac/Deliver-Execute-Finalize/issues"
   },
   "homepage": "https://github.com/AsianInsomniac/Deliver-Execute-Finalize#readme"
+  
 }

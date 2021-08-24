@@ -4,13 +4,13 @@ const bcrypt = require('bcryptjs');
 
 const User = require('../model/user.js');
 
-const LoginController = {
+const loginController = {
     getLogin: function (req, res){
         if(req.session.username)
             req.session.destroy(function(err){
                 if (err) throw err
             });
-            res.render('login', {error:"hidden"});
+            res.render('about', {error:"hidden"});
 
     },
 
