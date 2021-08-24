@@ -1,67 +1,47 @@
+const db = require('../model/db.js');
+
 const bcrypt = require('bcryptjs');
-const User = require('../model/user')
 
-exports.register = function (req,res) {
-  const { username, pass, email, mobile} = req.body;
-  
+const User = require('../model/user.js');
 
-  User.findOne({ email: email })
-      .then(user => {
-          if(user){
-              
-              res.redirect('userExists')
+const LoginController = {
+    getLogin: function (req, res){
+        if(req.session.username)
+            req.session.destroy(function(err){
+                if (err) throw err
+            });
+            res.render('login', {error:"hidden"});
 
-          }
-          else{
-              const newUser = new User({
+    },
 
-                  username: username,
-                  password: pass,
-                  emailadd: email,
-                  number: mobile,
-                     
-              });
-              
-              // console.log(newUser)
-              
-              bcrypt.genSalt(10, (err,salt) => 
-                  bcrypt.hash(newUser.password, salt, (err, hash) => {
-                      if(err) throw err;
-                      //set password to hash
-                      newUser.password=hash;
-                      //save user
-                      newUser.save()
-                      .then(user => {
-                          res.redirect('/login');
-                      })
-                      .catch(err => console.log(err));
+    postLogin: function (req, res) {
+		
+        var u = req.body.username;
+        var p = req.body.password;
 
-                  })) 
-                  
-          }
-      });
-  
-}
+        var query1 = {username: u};
+		db.findOne(User, query1, null, function(x) {
+            
+			if(x)
+				bcrypt.compare(p, x.password, function(err, equal) {
+					
+					if(equal){
+						
+						req.session.username = x.user;
+						
+						console.log(' Successfully Logged In' + x.user);
 
-
-exports.login = function (req,res) {
-  
-      const { username, password} = req.body;
-      //  console.log(req.body)
-      //  console.log(username);
-      //  console.log(password);
-     
-      if(username == "admin_terra" && password == "terra_password"){
-          
-          res.redirect("/mainMenu/lib")
-      }
-      else{
-          res.redirect("/mainMenu/libLogin")
-      }
-      
-      
-  
-  
+						res.redirect('/user/');
+					}
+					else{
+						res.render('login');
+					}
+					
+				});
+			else
+				res.render('login');
+        });
+    }
 }
 
 module.exports = loginController;
