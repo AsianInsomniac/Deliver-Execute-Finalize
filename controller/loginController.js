@@ -1,7 +1,8 @@
 const bcrypt = require('bcryptjs');
 const User = require('../model/user')
 
-exports.register = function (req,res) {
+const loginController = {
+    register: function (req,res) {
   const { username, pass, email, mobile} = req.body;
   
 
@@ -41,10 +42,10 @@ exports.register = function (req,res) {
           }
       });
   
-}
+},
 
 
-exports.login = function (req,res) {
+    login:  function (req,res) {
   
       const { username, password} = req.body;
       //  console.log(req.body)
@@ -63,5 +64,5 @@ exports.login = function (req,res) {
   
   
 }
-
+}
 module.exports = loginController;

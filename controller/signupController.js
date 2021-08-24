@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 const User = require('../model/user.js');
 
 const {validationResult} = require('express-validator');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 const signupController = {

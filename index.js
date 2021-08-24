@@ -14,7 +14,7 @@ app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/view/partials');
 
 dotenv.config();
-port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
