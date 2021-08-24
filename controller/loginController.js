@@ -10,7 +10,7 @@ const loginController = {
             req.session.destroy(function(err){
                 if (err) throw err
             });
-            res.render('login', {error:"hidden"});
+            res.render('about', {error:"hidden"});
 
     },
 
@@ -43,5 +43,4 @@ const loginController = {
         });
     }
 }
-
 module.exports = loginController;

@@ -10,13 +10,13 @@ const signupController = {
     },
 
     postSignUp: function (req, res) {
-		
+
 		var errors = validationResult(req);
-		
+
 		if (!errors.isEmpty()) {
 
             errors = errors.errors;
-			
+
             var details = {};
             for(i = 0; i < errors.length; i++)
                 details[errors[i].param + 'Error'] = errors[i].msg;
@@ -29,16 +29,16 @@ const signupController = {
 			var mobile = req.body.mobile;
 			var name = req.body.name;
 			var pass = req.body.pass + "";
-			
+
 			bcrypt.hash(pass, saltRounds, function(err, hash) {
-			
+
 				db.insertOne(User, {
 					email: email,
 					mobile: mobile,
 					name: name,
 					password: hash
 				}, function(flag){});
-			
+
 			});
 
 			console.log('Created account of ' + name);
@@ -53,7 +53,7 @@ const signupController = {
             res.send(result);
         });
     },
-	
+
 	checkMobile: function (req, res) {
         var mobile = req.query.mobile;
         db.findOne(User, {mobile: mobile}, "mobile", function (result) {
