@@ -10,7 +10,7 @@ const loginController = {
             req.session.destroy(function(err){
                 if (err) throw err
             });
-            res.render('about', {error:"hidden"});
+            res.render('about.hbs', {error:"hidden"});
 
     },
 
