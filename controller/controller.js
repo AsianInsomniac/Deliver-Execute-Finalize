@@ -4,7 +4,7 @@ const controller = {
     },
 
     getIndex: function (req, res) {
-		res.render('index.html');
+		res.render('home');
     }
 }
 

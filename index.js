@@ -11,7 +11,7 @@ const app = express();
 
 app.set('view engine', 'hbs');
 
-hbs.registerPartials(__dirname + '/view/partials');
+hbs.registerPartials(__dirname + '/views/partials');
 
 dotenv.config();
 port = process.env.PORT;
