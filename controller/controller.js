@@ -6,7 +6,7 @@ const controller = {
     getIndex: function (req, res) {
 		  
       // if (req.session.idNum)
-      res.render('index.hbs');
+      res.render('about.hbs');
     }
 }
 
