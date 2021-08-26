@@ -15,7 +15,7 @@ const loginController = {
     },
 
     postLogin: function (req, res) {
-		
+		console.log("1asdfasdf");
         var u = req.body.username;
         var p = req.body.password;
 
