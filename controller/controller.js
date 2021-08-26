@@ -6,8 +6,20 @@ const controller = {
     getIndex: function (req, res) {
 		  
       // if (req.session.idNum)
-      res.render('about.hbs');
-    }
+      res.render('home');
+    },
+	
+	getShop: function (req, res) {
+		res.render('shop');
+	},
+	
+	getAbout: function (req, res) {
+		res.render('about');
+	},
+	
+	getGallery: function (req, res) {
+		res.render('gallery');
+	}
 }
 
 module.exports = controller;

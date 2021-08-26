@@ -7,6 +7,9 @@ const app = express();
 // controller
 app.get('/favicon.ico', controller.getFavicon);
 app.get('/', controller.getIndex);
+app.get('/shop', controller.getShop);
+app.get('/about', controller.getAbout);
+app.get('/gallery', controller.getGallery);
 
 // loginController
 app.get('/login/:id', loginController.getLogin);
