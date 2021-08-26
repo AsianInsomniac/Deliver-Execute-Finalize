@@ -16,33 +16,59 @@
                     </div>
                 </div>
             </div>
-        </nav>
+</nav>
         
 <div id="id01" class="modal">
   
-          <form class="modal-content animate" action="/action_page.php" method="post">
-            <div class="imgcontainer">
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
               <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-              <img src="../public/logo2.png" alt="Logo" class="logo">
-            </div>
+              <img src="logo2.png" alt="Logo" class="logo">
+    </div>
 
-            <div class="container">
-              <label for="email"><b>Email</b></label>
-              <input type="email" placeholder="Enter Email" name="email" required>
+    <div class="container">
+      <label for="email"><b>Email</b></label>
+      <input type="email" placeholder="Enter Email" name="email" required>
 
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
                 
-              <button type="submit">Login</button>
-              <a href="/Register"><button type="register">Not yet registered? Join now!</button></a>
-              <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-              </label>
-            </div>
+      <button type="submit">Login</button>
+      <a href="/Register"><button type="register">Not yet registered? Join now!</button></a>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
 
-            <div class="container" style="background-color:#f1f1f1">
+    <div class="container" style="background-color:#f1f1f1">
               <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
               <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+<div id="cart" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeCart()">&times;</a>
+            <span class="cart_title">Cart</span>
+            
+            <div class="cart-product">
+                <span class="product-name">Lorem Ipsum</span>
+                <span class="product-price">Php 500</span>
+                <div class="product-picture"></div>
+
+                <div class="v40_20">
+                    <div class="v40_21"></div>
+                    <span class="v40_22">1</span>
+                    <div class="v40_23"></div>
+                    <div class="v40_24"></div>
+                </div>
             </div>
-          </form>
-        </div>
+            
+            
+            <span class="total">Total:</span>
+            <span class="money">Php 1000</span>
+
+            <div class="checkout">
+                <button class="checkout-btn">Checkout</button>
+            </div>
+
+</div>

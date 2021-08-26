@@ -1,4 +1,12 @@
-.shop-title {
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+ }
+
+ .shop-title {
     color: rgba(12,12,12,1);
     position: relative;
     font-family: Playfair Display;
