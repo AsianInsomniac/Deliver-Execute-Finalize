@@ -20,6 +20,7 @@ const controller = {
 	getGallery: function (req, res) {
 		res.render('gallery');
 	}
+
 }
 
 module.exports = controller;

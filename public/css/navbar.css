@@ -19,6 +19,7 @@
 a:hover {
     color:white;
     transition: 0.25s;
+    cursor:pointer;
 }
 
 

@@ -16,8 +16,8 @@ app.get('/login/:id', loginController.getLogin);
 app.get('/login', loginController.postLogin);
 
 // signupController
-app.get('/signup', signupController.getSignUp);
-app.get('/signup', signupController.postSignUp)
+app.get('/register', signupController.getSignUp);
+app.get('/register', signupController.postSignUp);
 
 // aboutUsController
 // app.get('/aboutus', aboutUsController);
