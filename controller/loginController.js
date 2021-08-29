@@ -15,10 +15,10 @@ const loginController = {
 
     postLogin: function (req, res) {
 		
-        var u = req.body.username;
+        var e = req.body.email;
         var p = req.body.password;
 
-        var query1 = {username: u};
+        var query1 = {email: e};
 		db.findOne(User, query1, null, function(x) {
             
 			if(x)
@@ -26,9 +26,9 @@ const loginController = {
 					
 					if(equal){
 						
-						req.session.username = x.user;
+						req.session.email = x.email;
 						
-						console.log(' Successfully Logged In' + x.user);
+						console.log(' Successfully Logged In' + x.email);
 
 						res.redirect('/user/');
 					}
