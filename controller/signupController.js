@@ -1,5 +1,8 @@
-const bcrypt = require('bcryptjs');
+const db =require('../model/db.js');
+const bcrypt = require('bcrypt');
+
 const User = require('../model/user.js');
+
 const {validationResult} = require('express-validator');
 const saltRounds = 10;
 
@@ -16,6 +19,8 @@ const signupController = {
 		if (!errors.isEmpty()) {
 
             errors = errors.errors;
+
+            var i;
 
             var details = {};
             for(i = 0; i < errors.length; i++)
