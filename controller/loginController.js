@@ -6,6 +6,7 @@ const User = require('../model/user.js');
 
 const loginController = {
     getLogin: function (req, res){
+		console.log("hiii");
         if(req.session.username)
             req.session.destroy(function(err){
                 if (err) throw err

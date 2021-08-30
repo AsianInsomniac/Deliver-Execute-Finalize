@@ -6,7 +6,7 @@ const saltRounds = 10;
 const signupController = {
 
     getSignUp: function (req, res) {
-        res.render('signup',{success:"hidden"});
+        res.render('register',{success:"hidden"});
     },
 
     postSignUp: function (req, res) {
@@ -21,7 +21,7 @@ const signupController = {
             for(i = 0; i < errors.length; i++)
                 details[errors[i].param + 'Error'] = errors[i].msg;
 
-            res.render('signup', details);
+            res.render('register', details);
         }
 		else{
 
@@ -42,7 +42,7 @@ const signupController = {
 			});
 
 			console.log('Created account of ' + name);
-			res.render('signup');
+			res.render('register');
 		}
     },
 
