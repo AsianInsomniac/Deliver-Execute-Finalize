@@ -5,7 +5,9 @@ const User = require ('./user.js');
 
 const options = {
     useUnifiedTopology: true,
-    useNewUrlParser: true
+    useNewUrlParser: true,
+	useCreateIndex: true,
+	useFindAndModify: false
 }
 
 const database = {

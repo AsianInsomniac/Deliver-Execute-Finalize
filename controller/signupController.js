@@ -9,12 +9,10 @@ const saltRounds = 10;
 const signupController = {
 
     getSignUp: function (req, res) {
-        
         res.render('register',{success:"hidden"});
     },
 
     postSignUp: function (req, res) {
-        console.log("1231313");
 		var errors = validationResult(req);
 
 		if (!errors.isEmpty()) {
@@ -30,14 +28,12 @@ const signupController = {
             res.render('register', details);
         }
 		else{
-
 			var email = req.body.email;
 			var mobile = req.body.mobile;
 			var name = req.body.name;
-			var pass = req.body.pass + "";
+			var pass = req.body.password;
             console.log("Registering " + email + "...");
 			bcrypt.hash(pass, saltRounds, function(err, hash) {
-                
                 var user = {
                     email: email,
                     mobile: mobile,
@@ -46,13 +42,12 @@ const signupController = {
                 }
                 
 				db.insertOne(User, user, function(flag){
-
+					if(flag){
+						console.log('Created account of ' + name);
+						res.render('register');
+					}
                 });
-
 			});
-
-			console.log('Created account of ' + name);
-			res.render('register');
 		}
     },
 
