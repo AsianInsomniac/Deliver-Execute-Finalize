@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const url = 'mongodb+srv://CCAPDEV_group10:easypeasy@team1.oigyx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const url = 'mongodb+srv://CCAPDEV_group10:easypeasy@team1.oigyx.mongodb.net/Terra?retryWrites=true&w=majority'
 
 const User = require ('./user.js');
 
