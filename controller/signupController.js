@@ -1,4 +1,4 @@
-const db =require('../model/db.js');
+const db = require('../model/db.js');
 const bcrypt = require('bcrypt');
 
 const User = require('../model/user.js');
@@ -18,7 +18,7 @@ const signupController = {
 		var errors = validationResult(req);
 
 		if (!errors.isEmpty()) {
-
+            console.log("Error in Registering...");
             errors = errors.errors;
 
             var i;
@@ -35,15 +35,19 @@ const signupController = {
 			var mobile = req.body.mobile;
 			var name = req.body.name;
 			var pass = req.body.pass + "";
-
+            console.log("Registering " + email + "...");
 			bcrypt.hash(pass, saltRounds, function(err, hash) {
+                
+                var user = {
+                    email: email,
+                    mobile: mobile,
+                    name: name,
+                    password: hash
+                }
+                
+				db.insertOne(User, user, function(flag){
 
-				db.insertOne(User, {
-					email: email,
-					mobile: mobile,
-					name: name,
-					password: hash
-				}, function(flag){});
+                });
 
 			});
 

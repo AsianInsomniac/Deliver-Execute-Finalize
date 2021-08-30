@@ -18,7 +18,7 @@ const loginController = {
 		
         var e = req.body.email;
         var p = req.body.password;
-
+		console.log ("Logging in " + e + " ...");
         var query1 = {email: e};
 			db.findOne(User, query1, null, function(x) {
 				
