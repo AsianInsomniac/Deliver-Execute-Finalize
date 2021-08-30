@@ -14,11 +14,11 @@ app.get('/gallery', controller.getGallery);
 
 // loginController
 app.get('/login/:id', loginController.getLogin);
-app.get('/login', loginController.postLogin);
+app.post('/login', loginController.postLogin);
 
 // signupController
-app.get('/Register', signupController.getSignUp);
-app.get('/Register/:id', signupController.postSignUp)
+app.get('/register', signupController.getSignUp);
+app.post('/register', signupController.postSignUp);
 
 // aboutUsController
 app.get('/about', aboutController.getAbout);

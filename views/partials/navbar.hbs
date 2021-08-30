@@ -28,21 +28,21 @@
 
     <div class="container">
       <label for="email"><b>Email</b></label>
-      <input type="email" placeholder="Enter Email" name="email" required>
+      <input type="email" placeholder="Enter Email" name="email" id="email" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="password" id="password" required>
                 
-      <button type="submit">Login</button>
-      <a href="/Register"><button type="register">Not yet registered? Join now!</button></a>
+      <input type="submit" id="submit" value="Login"/>
+      <a href="/register"><button type="button">Not yet registered? Join now!</button></a>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
-              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-              <span class="psw">Forgot <a href="#">password?</a></span>
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
     </div>
   </form>
 </div>
