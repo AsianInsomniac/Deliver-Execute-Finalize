@@ -47,28 +47,53 @@
   </form>
 </div>
 <div id="cart" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeCart()">&times;</a>
-            <span class="cart_title">Cart</span>
+  <div class="container-fluid  h-100">
+    <div class="row mt-1 mb-4">
+      <div class="col-8 cart-title">Cart</div>
+      <div class="col-4 ">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeCart()">&times;</a>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center mt-5 mb-5" id="cart-items">
+      <div class="row mt-1 mb-1 cart-product">
+        <div class="col-4">
+          <img src="bag.jpg" alt="product" class="product-picture">
+        </div>
+        <div class="col-8">
+          <div class="product-name">Lorem Ipsum</div>
+          <div class="product-price">Php 500</div>
+          <div class="product-quantity">1</div>
+        </div>
+      </div>
+      <div class="row mt-1 mb-1 cart-product">
+        <div class="col-4">
+          <img src="bag.jpg" alt="product" class="product-picture">
+        </div>
+        <div class="col-8">
+          <div class="product-name">Lorem Ipsum</div>
+          <div class="product-price">Php 500</div>
+          <div class="product-quantity">1</div>
+        </div>
+      </div>
+    </div> 
+    <div class="row mt-5 mb-5 d-flex align-items-end" id="cart-checkout">
+      <div class="row d-flex align-items-end">
+        <div class="col">
+          <div class="total">Total:</div>
+        </div>
+        <div class="col">
+          <div class="money">Php 1000</div>
+        </div>
+      </div>
+      <div class="row d-flex align-items-end justify-content-center">
+        <button class="checkout-btn">Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
             
-            <div class="cart-product">
-                <span class="product-name">Lorem Ipsum</span>
-                <span class="product-price">Php 500</span>
-                <div class="product-picture"></div>
-
-                <div class="v40_20">
-                    <div class="v40_21"></div>
-                    <span class="v40_22">1</span>
-                    <div class="v40_23"></div>
-                    <div class="v40_24"></div>
-                </div>
-            </div>
+  
             
-            
-            <span class="total">Total:</span>
-            <span class="money">Php 1000</span>
-
-            <div class="checkout">
-                <button class="checkout-btn">Checkout</button>
-            </div>
-
+  
 </div>

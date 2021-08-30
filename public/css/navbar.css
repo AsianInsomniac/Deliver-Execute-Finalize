@@ -149,39 +149,36 @@ span.psw {
 
 /* CART */
 
+.cart-title{
+  font-family: Playfair Display;
+  font-weight: Bold;
+  color: rgba(0,0,0,1);
+  font-size: 48px;
+  top: 0;
+  left: 25px;
+}
+
 .product-picture {
-    width: 143px;
+    width: 120px;
     height: 120px;
-    background: url("product.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     opacity: 1;
-    position: absolute;
-    top: 6px;
-    left: 0px;
     overflow: hidden;
 }
 
 .cart-product {
-    width: 323px;
-    height: 126px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     opacity: 1;
-    position: absolute;
-    top: 136px;
-    left: 35px;
+
     overflow: hidden;
 }
 
 .product-name {
-    width: 153px;
     color: rgba(0,0,0,1);
-    position: absolute;
-    top: 0px;
-    left: 170px;
     font-family: Playfair Display;
     font-weight: Bold;
     font-size: 24px;
@@ -190,11 +187,7 @@ span.psw {
 }
 
 .product-price {
-    width: 103px;
     color: rgba(0,0,0,1);
-    position: absolute;
-    top: 26px;
-    left: 162px;
     font-family: Playfair Display;
     font-weight: Regular;
     font-size: 24px;
@@ -207,37 +200,27 @@ span.psw {
     height: 68px;
     background: rgba(209,203,193,1);
     opacity: 1;
-    position: absolute;
-    top: 0px;
-    left: 0px;
     overflow: hidden;
     font-family: Playfair Display;
+    bottom: 0px;
 }
 
 .total {
-    width: 69px;
     color: rgba(0,0,0,1);
-    position: absolute;
-    top: 888px;
-    left: 35px;
     font-family: Playfair Display;
     font-weight: Regular;
     font-size: 24px;
     opacity: 1;
-    text-align: center;
+    text-align: left;
 }
 
 .money {
-    width: 103px;
     color: rgba(0,0,0,1);
-    position: absolute;
-    top: 888px;
-    left: 272px;
     font-family: Playfair Display;
     font-weight: Regular;
     font-size: 24px;
     opacity: 1;
-    text-align: center;
+    text-align: right;
 }
 
 .name {
@@ -253,10 +236,9 @@ span.psw {
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
     background: rgba(255,255,255,1);
     opacity: 1;
-    position: absolute;
+    position: fixed;
 
 }
 
@@ -285,4 +267,6 @@ span.psw {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-  
+
+/* PLUS/MINUS BUTTON */
+
