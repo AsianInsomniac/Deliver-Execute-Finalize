@@ -10,7 +10,7 @@ const loginController = {
             req.session.destroy(function(err){
                 if (err) throw err
             });
-            res.render('index.hbs', {error:"hidden"});
+            res.render('login', {error:"hidden"});
     },
 
     postLogin: function (req, res) {
@@ -19,26 +19,26 @@ const loginController = {
         var p = req.body.password;
 
         var query1 = {email: e};
-		db.findOne(User, query1, null, function(x) {
-            
-			if(x)
-				bcrypt.compare(p, x.password, function(err, equal) {
-					
-					if(equal){
+			db.findOne(User, query1, null, function(x) {
+				
+				if(x)
+					bcrypt.compare(p, x.password, function(err, equal) {
 						
-						req.session.email = x.email;
-						
-						console.log(' Successfully Logged In' + x.email);
+						if(equal){
+							
+							req.session.email = x.email;
+							
+							console.log(' Successfully Logged In' + x.email);
 
-						res.redirect('/user/');
-					}
-					else{
-						res.render('login');
-					}
-					
-				});
-			else
-				res.render('login');
+							res.redirect('/user/');
+						}
+						else{
+							res.render('login');
+						}
+						
+					});
+				else
+					res.render('login');
         });
     }
 }
