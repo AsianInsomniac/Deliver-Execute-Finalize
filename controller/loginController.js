@@ -16,6 +16,7 @@ const loginController = {
 
     postLogin: function (req, res) {
 		
+		console.log("testtestetstetstets")
         var e = req.body.email;
         var p = req.body.password;
 		console.log ("Logging in " + e + " ...");
