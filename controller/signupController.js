@@ -44,7 +44,7 @@ const signupController = {
 				db.insertOne(User, user, function(flag){
 					if(flag){
 						console.log('Created account of ' + name);
-						res.render('register');
+						res.render('home');
 					}
                 });
 			});
