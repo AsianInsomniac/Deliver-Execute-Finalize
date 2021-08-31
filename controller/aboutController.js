@@ -3,7 +3,7 @@ const About = require('../model/about.js');
 
 const aboutController = {
     getAbout: function(req, res){
-        res.render('about');
+        res.render('about', {success:"hidden"});
     },
 
     postAbout: function(req, res){
@@ -11,16 +11,21 @@ const aboutController = {
         var mobile_no = req.body.mobile_no;
         var message = req.body.message;
         var name = req.body.name;
+        console.log("i was here");
 
-        db.insertOne(About, {
+        var about = {
             email: email,
             mobile_no: mobile_no,
             message: message,
             name: name
-        });
+        }
 
-        console.log('Added About ' + email);
-        res.render('about');
+        db.insertOne(About, about, function(flag) {
+            if(flag){
+            console.log('Created contact us for ' + name);
+            res.render('about');
+            }
+        });
     },
 };
 

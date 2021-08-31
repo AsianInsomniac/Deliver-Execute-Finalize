@@ -22,6 +22,6 @@ app.post('/register', signupController.postSignUp);
 
 // aboutUsController
 app.get('/about', aboutController.getAbout);
-app.get('/about', aboutController.postAbout);
+app.post('/about', aboutController.postAbout);
 
 module.exports = app;
