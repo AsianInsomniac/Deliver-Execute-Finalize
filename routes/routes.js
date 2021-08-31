@@ -13,8 +13,8 @@ app.get('/about', controller.getAbout);
 app.get('/gallery', controller.getGallery);
 
 // loginController
-app.get('/login/:id', loginController.getLogin);
-app.post('/login', loginController.postLogin);
+app.get('/index/:id', loginController.getLogin);
+app.post('/index', loginController.postLogin);
 
 // signupController
 app.get('/register', signupController.getSignUp);

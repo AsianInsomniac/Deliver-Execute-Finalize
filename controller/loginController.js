@@ -34,12 +34,12 @@ const loginController = {
 							res.redirect('/user/');
 						}
 						else{
-							res.render('login');
+							res.render('home');
 						}
 						
 					});
 				else
-					res.render('login');
+					res.render('home');
         });
     }
 }
