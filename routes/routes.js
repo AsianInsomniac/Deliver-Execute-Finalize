@@ -24,4 +24,9 @@ app.post('/register', signupController.postSignUp);
 app.get('/about', aboutController.getAbout);
 app.post('/about', aboutController.postAbout);
 
+// cartController
+app.get('/navbar', cartController.getCart);
+app.post('/navbar', cartController.postCart);
+
+
 module.exports = app;
