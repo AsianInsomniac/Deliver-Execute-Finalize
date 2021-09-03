@@ -1,0 +1,56 @@
+.product-image{
+    width: 400px;
+    height: 400px;
+}
+
+.productpage-addcart {
+    font-family: Playfair Display;
+    background: rgba(216,191,178,1);
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 60%;
+    font-weight: 600;
+    transition: 0.3s;
+    
+}
+
+.productpage-addcart:hover{
+    background-color: #ddd;
+}
+
+.productpage-name {
+    color: rgba(12,12,12,1);
+    position: relative;
+    font-family: Playfair Display;
+    font-weight: Bold;
+    font-size: 36px;
+    opacity: 1;
+    text-align: left;
+}
+
+.productpage-price{
+    color: rgba(12,12,12,1);
+    position: relative;
+    font-family: Playfair Display;
+    font-size: 18px;
+    opacity: 1;
+    font-style: italic;
+    text-align: left;
+}
+
+.productpage-desc{
+    color: rgba(12,12,12,1);
+    position: relative;
+    font-family: Playfair Display;
+    font-size: 18px;
+    opacity: 1;
+    text-align: left;
+    width: 60%;
+}
+
+.position-relative{
+    bottom:0;
+}
