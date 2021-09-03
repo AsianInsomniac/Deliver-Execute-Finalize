@@ -37,7 +37,7 @@ input[type=email], input[type=password] {
 }
 
 /* Set a style for all buttons */
-button {
+button, input[type=submit] {
     font-family: Playfair Display;
     background: rgba(216,191,178,1);
     color: black;
@@ -47,6 +47,17 @@ button {
     cursor: pointer;
     width: 100%;
     font-weight: 600;
+}
+
+/*logout*/
+#logout {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 button:hover {

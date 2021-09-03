@@ -5,6 +5,7 @@ const logoutController = require('../controller/logoutController.js');
 const signupController = require('../controller/signupController.js');
 const aboutController = require('../controller/aboutController');
 const cartController = require('../controller/cartController');
+const productController = require('../controller/productController');
 const app = express();
 
 // controller
@@ -28,6 +29,11 @@ app.post('/register', signupController.postSignUp);
 // aboutUsController
 app.get('/about', aboutController.getAbout);
 app.post('/about', aboutController.postAbout);
+
+// productController
+
+app.get('/product', productController.getProduct);
+app.post('/product', productController.postProduct);
 
 // cartController
 app.get('/navbar', cartController.getCart);
