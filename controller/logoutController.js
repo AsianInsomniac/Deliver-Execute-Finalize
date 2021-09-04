@@ -16,7 +16,7 @@ const logoutController = {
                 if (err) throw err
                 console.log("test1234");
                 console.log("Logout Successful!");
-				res.render("login");
+				res.render("home");
             });
 
         else

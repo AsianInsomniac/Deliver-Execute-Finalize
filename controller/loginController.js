@@ -30,18 +30,19 @@ const loginController = {
 							
 							req.session.email = x.email;
 							
-							console.log(' Successfully Logged In' + x.email);
+							console.log(' Successfully Logged In ' + x.email);
 
-							res.redirect('/user/');
-						}
-						else{
 							res.render('home');
 						}
+						// else{
+						// 	res.render('home');
+						// }
 						
 					});
-				else
-					res.render('home');
+				// else
+				// 	res.render('home');
         });
     }
 }
+
 module.exports = loginController;

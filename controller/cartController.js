@@ -3,10 +3,10 @@ const Cart = require('../model/about.js');
 
 const cartController = {
     getCart: function(req,res){
-        res.render('navbar', {success:"hidden"});
+        res.render('cart', {success:"hidden"});
     },
 
-    postCart: function(req,res){
+    deleteCart: function(req,res){
     }
 };
 

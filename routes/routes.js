@@ -37,7 +37,7 @@ app.post('/product', productController.postProduct);
 
 // cartController
 app.get('/navbar', cartController.getCart);
-app.post('/navbar', cartController.postCart);
+app.post('/navbar', cartController.deleteCart);
 
 
 module.exports = app;
