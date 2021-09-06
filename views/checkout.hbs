@@ -12,7 +12,48 @@
     <body>
         {{> navbar}}
         <section>
-            
+            <div class="container-fluid mt-5 mb-5 px-5">
+                <div class="row">
+                    <div class="col">
+                        <form class="details" method="post">
+                            <div class="container">
+                                <input type="email" placeholder="Enter Email" name="email" id="email" required>
+
+                                <input type="number" placeholder="Enter Password" name="number" id="number" required>
+
+                                <input type="text" placeholder="Enter First Name" name="fname" id="fname" required>
+
+                                <input type="text" placeholder="Enter Last Name" name="lname" id="lname" required>
+                            </div>
+                            <div class="container">
+                                <input type="text" placeholder="Street & House No." name="street" id="street" required>
+
+                                <input type="text" placeholder="Apartment, condo, etc (optional)" name="apartment" id="apartment" >
+
+                                <input type="text" placeholder="City (e.g. Manila)" name="city" id="city" required>
+
+                                <input type="text" placeholder="Province (e.g. Laguna, NCR, etc)" name="province" id="province" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <div class="container-fluid h-100">
+                            <div class="row d-flex justify-content-center mt-5 mb-5" id="checkout-items">
+                                <div class="row mt-1 mb-1 cart-product">
+                                    <div class="col-4">
+                                        <img src="bag.jpg" alt="product" class="product-picture">
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="product-name">Lorem Ipsum</div>
+                                        <div class="product-price">Php 500</div>
+                                        <div class="product-quantity">1</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         
     </body>

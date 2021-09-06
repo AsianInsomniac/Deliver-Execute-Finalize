@@ -6,6 +6,7 @@ const signupController = require('../controller/signupController.js');
 const aboutController = require('../controller/aboutController');
 const cartController = require('../controller/cartController');
 const productController = require('../controller/productController');
+const checkoutController = require('../controller/checkoutController');
 const app = express();
 
 // controller

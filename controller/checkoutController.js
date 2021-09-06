@@ -5,7 +5,7 @@ const checkoutController = {
         res.render('checkout', {success:"hidden"});
     },
 
-    postCheckoutProduct: function(req,res){
+    postCheckout: function(req,res){
     }
 };
 
