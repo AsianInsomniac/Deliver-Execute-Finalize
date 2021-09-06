@@ -31,9 +31,12 @@ app.get('/about', aboutController.getAbout);
 app.post('/about', aboutController.postAbout);
 
 // productController
-
 app.get('/product', productController.getProduct);
 app.post('/product', productController.postProduct);
+
+// checkoutController
+app.get('/checkout', checkoutController.getCheckout);
+app.post('/checkout', checkoutController.postCheckout);
 
 // cartController
 app.get('/navbar', cartController.getCart);
