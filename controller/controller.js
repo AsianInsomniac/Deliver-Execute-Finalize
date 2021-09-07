@@ -12,15 +12,15 @@ const controller = {
     },
 	
 	getShop: function (req, res) {
-		res.render('shop');
+		res.render('shop', {email: req.session.email});
 	},
 	
 	getAbout: function (req, res) {
-		res.render('about');
+		res.render('about', {email: req.session.email});
 	},
 	
 	getGallery: function (req, res) {
-		res.render('gallery');
+		res.render('gallery', {email: req.session.email});
 	}
 
 }
