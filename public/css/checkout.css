@@ -1,0 +1,56 @@
+input[type=text], input[type=number]{
+    font-family: Playfair Display;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.container-title {
+    color: rgba(0,0,0,1);
+    font-family: Playfair Display;
+    font-weight: Regular;
+    font-size: 14px;
+    opacity: 1;
+}
+
+.checkout-name {
+    color: rgba(0,0,0,1);
+    font-family: Playfair Display;
+    font-weight: Bold;
+    font-size: 24px;
+    opacity: 1;
+}
+
+.checkout-price, .checkout-quantity {
+    color: rgba(0,0,0,1);
+    font-family: Playfair Display;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+}
+
+.checkout-picture {
+    width: 180px;
+    height: 180px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.submit-checkout-btn {
+    height: 68px;
+    background: rgba(216,191,178,1);
+    opacity: 1;
+    overflow: hidden;
+    font-family: Playfair Display;
+    bottom: 0px;
+}
+
+.submit-checkout-btn:hover{
+  background: rgba(209,203,193,1);
+}

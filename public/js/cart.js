@@ -1,5 +1,5 @@
 function openCart() {
-    document.getElementById("cart").style.width = "400px";
+    document.getElementById("cart").style.width = "500px";
 }
 
 function closeCart() {
