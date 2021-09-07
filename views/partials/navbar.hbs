@@ -10,17 +10,15 @@
                         <a class="nav-texts nav-space" href="/about">About Us</a> 
                         <a class="nav-texts nav-space" href="/gallery">Photo Gallery</a> 
                         
-                        {{!-- <div sec:authorize="!isAuthenticated()"> --}}
+                        {{#if email}}
+                          <form class="nav-texts nav-space" action="/logout" method="post">
+                              <button type="submit" id="logout"> Logout </button>
+                            </form>
+                        {{else}}
                             <a class="nav-texts nav-space" onclick="document.getElementById('id01').style.display='block'" style="width:auto;" >
                               Login
                             </a>
-                        {{!-- </div> --}}
-
-                        {{!-- <div sec:authorize="isAuthenticated()"> --}}
-                            <form class="nav-texts nav-space" action="/logout" method="post">
-                              <button type="submit" id="logout"> Logout </button>
-                            </form>
-                        {{!-- </div> --}}
+                        {{/if}}                    
                         
                         <a class="nav-texts nav-space" onclick="openCart()">
                             <img width="30" src="shopping-cart.png" alt="controller" class="d-inline-block align-text-center"/>

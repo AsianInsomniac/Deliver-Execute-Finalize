@@ -11,7 +11,7 @@ const loginController = {
             req.session.destroy(function(err){
                 if (err) throw err
             });
-            res.render('login', {error:"hidden"});
+        res.render('login', {error:"hidden"});
     },
 
     postLogin: function (req, res) {
@@ -32,7 +32,7 @@ const loginController = {
 							
 							console.log(' Successfully Logged In ' + x.email);
 
-							res.render('home');
+							res.render('home', {email: x.email});
 						}
 						// else{
 						// 	res.render('home');

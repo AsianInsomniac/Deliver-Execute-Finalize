@@ -1,3 +1,5 @@
+const db = require('../model/db.js');
+
 const controller = {
     getFavicon: function (req, res) {
         res.status(204);
@@ -5,8 +7,8 @@ const controller = {
 
     getIndex: function (req, res) {
 		  
-      // if (req.session.idNum)
-      res.render('home');
+      console.log("this is the user " + req.session.email)
+      res.render('home', {email: req.session.email});
     },
 	
 	getShop: function (req, res) {
