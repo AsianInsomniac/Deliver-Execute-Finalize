@@ -192,28 +192,29 @@ span.psw {
     color: rgba(0,0,0,1);
     font-family: Playfair Display;
     font-weight: Bold;
-    font-size: 24px;
+    font-size: 18px;
     opacity: 1;
-    text-align: center;
 }
 
-.product-price {
+.product-price, .product-quantity {
     color: rgba(0,0,0,1);
     font-family: Playfair Display;
     font-weight: Regular;
-    font-size: 24px;
+    font-size: 18px;
     opacity: 1;
-    text-align: center;
 }
 
 .checkout-btn {
-    width: 340px;
     height: 68px;
-    background: rgba(209,203,193,1);
+    background: rgba(216,191,178,1);
     opacity: 1;
     overflow: hidden;
     font-family: Playfair Display;
     bottom: 0px;
+}
+
+.checkout-btn:hover{
+  background: rgba(209,203,193,1);
 }
 
 .total {
