@@ -1,5 +1,5 @@
 const db = require('../model/db.js');
-const Cart = require('../model/about.js');
+const Cart = require('../model/cart.js');
 
 const cartController = {
     getCart: function(req,res){
@@ -18,7 +18,8 @@ const cartController = {
     },
 
     deleteCart: function(req,res){
-    }
+    },
+
 };
 
 module.exports = cartController;
