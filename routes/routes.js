@@ -33,7 +33,7 @@ app.post('/about', aboutController.postAbout);
 
 // productController
 app.get('/product', productController.getProduct);
-app.post('/product', productController.postProduct);
+//app.post('/product', productController.postProduct);
 
 // checkoutController
 app.get('/checkout', checkoutController.getCheckout);

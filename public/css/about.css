@@ -10,8 +10,8 @@ body {
 
 /*NAV BAR*/
 
-.navbar {
-    background: lightblue url("bag.jpg");
+.navbar-about {
+    background: lightblue url("../bag.jpg");
     width: 100%;
     height: 300px;
     position: relative;

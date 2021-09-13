@@ -1,31 +1,31 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
-                <a class="navbar-brand" aria-current="page"  href="/">
-                    <img width="150" src="logo2.png" alt="logo" class="d-inline-block align-text-center"/>
-                </a>
+    <div class="container">
+        <a class="navbar-brand" aria-current="page"  href="/">
+			<img width="150" src="logo2.png" alt="logo" class="d-inline-block align-text-center"/>
+        </a>
               
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav ms-auto align-items-left">
-                        <a class="nav-texts nav-space" href="/shop">Shop</a> 
-                        <a class="nav-texts nav-space" href="/about">About Us</a> 
-                        <a class="nav-texts nav-space" href="/gallery">Photo Gallery</a> 
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto align-items-left">
+                <a class="nav-texts nav-space" href="/shop">Shop</a> 
+                <a class="nav-texts nav-space" href="/about">About Us</a> 
+                <a class="nav-texts nav-space" href="/gallery">Photo Gallery</a> 
                         
-                        {{#if email}}
-                          <form class="nav-texts nav-space" action="/logout" method="post">
-                              <button type="submit" id="logout"> Logout </button>
-                            </form>
-                        {{else}}
-                            <a class="nav-texts nav-space" onclick="document.getElementById('id01').style.display='block'" style="width:auto;" >
-                              Login
-                            </a>
-                        {{/if}}                    
+                {{#if email}}
+                    <form class="nav-texts nav-space" action="/logout" method="post">
+                        <button type="submit" id="logout"> Logout </button>
+                    </form>
+                {{else}}
+                    <a class="nav-texts nav-space" onclick="document.getElementById('id01').style.display='block'" style="width:auto;" >
+                        Login
+                    </a>
+                {{/if}}                    
                           
-                        <a class="nav-texts nav-space" onclick="openCart()">
-                            <img width="30" src="shopping-cart.png" alt="controller" class="d-inline-block align-text-center"/>
-                        </a> 
-                    </div>
-                </div>
+                <a class="nav-texts nav-space" onclick="openCart()">
+                    <img width="30" src="shopping-cart.png" alt="controller" class="d-inline-block align-text-center"/>
+                </a> 
             </div>
+        </div>
+     </div>
 </nav>
         
 <div id="id01" class="modal">

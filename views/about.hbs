@@ -9,7 +9,9 @@
     </head>
     
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light">
+		{{> navbar}}
+		<section>
+        <nav class="navbar-about navbar-expand-lg navbar-light">
             <div class="container">
                 <div class="row">
                     <div class="col-sm ms-auto align-items-left d-flex justify-content-end">
@@ -27,6 +29,7 @@
                 
             </div>
         </nav>
+		</section>
         <section>
             <div class="container mt-5 mb-5" id="about-proper">
                 <div class="row " id="mission">
@@ -61,7 +64,7 @@
                         <form class="modal-content animate"  method="post">
                             <div class="container">
                                 <label for="email"><b>Email</b></label>
-                                <input type="email" placeholder="Enter Email" id="email" name="email" required>
+                                <input type="email" placeholder="Enter Email" id="email_cf" name="email_cf" required>
 
                                 <label for="mobile_no"><b>Mobile Number</b></label>
                                 <input type="text" placeholder="Enter Mobile Number" id="mobile_no" name="mobile_no" required>
