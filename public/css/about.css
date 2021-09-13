@@ -17,26 +17,26 @@ body {
     position: relative;
 }
 
-.nav-texts {
+.nav-texts-about {
     font-size: 24px;
     font-weight: 500;
     color: black;
     text-decoration: none;
 }
 
-.nav-space {
+.nav-space-about {
     padding-right: 35px;
     margin-left: 25px;
 }
 
-.nav-title {
+.nav-title-about {
     font-size: 48px;
     font-weight: 500;
     color: black;
     text-decoration: none;
 }
 
-.nav-title-space {
+.nav-title-space-about {
     padding-right: 35px;
     margin-left: 25px;
 }
