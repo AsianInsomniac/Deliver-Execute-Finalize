@@ -4,7 +4,7 @@ const Checkout = require('../model/checkout.js');
 const checkoutController = {
     getCheckout: function(req,res){
         console.log("hereeeee")
-        res.render('checkout', {success:"hidden"});
+        res.render('checkout', {success:"hidden", email : req.session.email, user : req.session.name});
     },
 
     postCheckout: function(req,res){
@@ -33,7 +33,7 @@ const checkoutController = {
         db.insertOne(Checkout, checkout, function(flag){
             if (flag){
                 console.log('Checkout for ' + fname + " " + lname);
-                res.render('checkout', {email : req.session.email})
+                res.render('checkout', {email : req.session.email, user:req.session.name})
             }
         });
     },

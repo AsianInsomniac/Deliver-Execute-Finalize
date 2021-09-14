@@ -22,7 +22,6 @@ const controller = {
 	getGallery: function (req, res) {
 		res.render('gallery', {email: req.session.email, user: req.session.name});
 	}
-
 }
 
 module.exports = controller;
