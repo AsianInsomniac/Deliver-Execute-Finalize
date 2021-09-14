@@ -32,11 +32,11 @@ app.get('/about', aboutController.getAbout);
 app.post('/about', aboutController.postAbout);
 
 // productController
-app.get('/fbclassic', productController.getClassic);
-app.get('/fbred', productController.getRed);
-app.get('/fbpink', productController.getPink);
-app.get('/fbblue', productController.getBlue);
-app.get('/fbyellow', productController.getYellow);
+//app.get('/fbclassic', productController.getClassic);
+//app.get('/fbred', productController.getRed);
+//app.get('/fbpink', productController.getPink);
+//app.get('/fbblue', productController.getBlue);
+//app.get('/fbyellow', productController.getYellow);
 //app.post('/product', productController.postProduct);
 
 // checkoutController
