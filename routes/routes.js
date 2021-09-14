@@ -34,12 +34,16 @@ app.get('/about', aboutController.getAbout);
 app.post('/about', aboutController.postAbout);
 
 // productController
-//app.get('/fbclassic', productController.getClassic);
-//app.get('/fbred', productController.getRed);
-//app.get('/fbpink', productController.getPink);
-//app.get('/fbblue', productController.getBlue);
-//app.get('/fbyellow', productController.getYellow);
-//app.post('/product', productController.postProduct);
+app.get('/fbclassic', productController.getClassic);
+app.get('/fbred', productController.getRed);
+app.get('/fbpink', productController.getPink);
+app.get('/fbblue', productController.getBlue);
+app.get('/fbyellow', productController.getYellow);
+app.post('/fbblue', productController.addToCart);
+app.post('/fbclassic', productController.addToCart);
+app.post('/fbred', productController.addToCart);
+app.post('/fbyellow', productController.addToCart);
+app.post('/fbpink', productController.addToCart);
 
 // checkoutController
 app.get('/checkout', checkoutController.getCheckout);
@@ -47,7 +51,5 @@ app.post('/checkout', checkoutController.postCheckout);
 
 // cartController
 app.get('/navbar', cartController.getCart);
-app.post('/navbar', cartController.deleteCart);
-
 
 module.exports = app;

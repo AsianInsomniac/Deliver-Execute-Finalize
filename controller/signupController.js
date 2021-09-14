@@ -2,9 +2,7 @@ const db = require('../model/db.js');
 const bcrypt = require('bcrypt');
 const express = require('express');
 const bp = require('body-parser');
-
 const User = require('../model/user.js');
-
 const { validationResult } = require('express-validator');
 const saltRounds = 10;
 
@@ -61,13 +59,22 @@ const signupController = {
                             db.insertOne(User, user, function(flag){
                                 if(flag){
                                     console.log('Created account of ' + name);
-                                    res.render('home');
+
+                                    var query = { email: email };
+
+                                    db.findOne(User, query, null, function (result) {
+                                        if (result)
+                                            bcrypt.compare(pass, result.password, function (err, equal) {
+                                                if (equal) {
+                                                    req.session.email = result.email;
+                                                    res.render('home', { email: result.email });
+                                                }
+                                            });
+                                    });
                                 }
                             });
                         }
                 });
-
-				
 			});
 		}
     },

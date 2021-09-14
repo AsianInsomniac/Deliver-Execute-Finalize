@@ -9,15 +9,15 @@ const cartController = {
         var query1 = {email: e};
         console.log("Checking cart for " + e + "...");
             db.findMany(Cart, query1, {_id:-1}, null, 0, function(x){
-                
+                res.render('navbar', x);
             });
-
-        
-
-        res.render('cart', {success:"hidden"});
     },
 
     deleteCart: function(req,res){
+        var e = req.session.email;
+        db.deleteMany(Cart, function(x){
+            console.log("deleted cart for" +  e);
+        });
     },
 
 };

@@ -9,15 +9,18 @@
               
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto align-items-left">
-                <a class="nav-texts nav-space" href="/shop">Shop</a> 
-                <a class="nav-texts nav-space" href="/about">About Us</a> 
-                <a class="nav-texts nav-space" href="/gallery">Photo Gallery</a> 
-                        
                 {{#if email}}
+					<p class="nav-texts nav-space">Welcome {{user}}!</p> 
+					<a class="nav-texts nav-space" href="/shop">Shop</a> 
+             	   	<a class="nav-texts nav-space" href="/about">About Us</a> 
+              		<a class="nav-texts nav-space" href="/gallery">Photo Gallery</a> 
                     <form class="nav-texts nav-space" action="/logout" method="post">
                         <button type="submit" id="logout">Logout</button>
                     </form>
                 {{else}}
+					<a class="nav-texts nav-space" href="/shop">Shop</a> 
+                	<a class="nav-texts nav-space" href="/about">About Us</a> 
+               		<a class="nav-texts nav-space" href="/gallery">Photo Gallery</a> 	
                     <a class="nav-texts nav-space" href="/login">Login</a>
                 {{/if}}                    
                           
@@ -38,28 +41,21 @@
 				<a href="javascript:void(0)" class="closebtn" onclick="closeCart()">&times;</a>
 			</div>
 		</div>
-		<div class="row d-flex justify-content-center mt-5 mb-5" id="cart-items">
-			<div class="row mt-1 mb-1 cart-product">
-				<div class="col-4">
-					<img src="bag.jpg" alt="product" class="product-picture">
+		{{#if result}}
+			{{#each result}}
+			<div class="row d-flex justify-content-center mt-5 mb-5" id="cart-items">
+				<div class="row mt-1 mb-1 cart-product">
+					<div class="col-4">
+						<img src="fb{{result.item}}.png" alt="product" class="product-picture">
+					</div>
+					<div class="col-8">
+						<div class="product-name" id="item" name="item">{{result.item}}</div>
+						<div class="product-price" id="price" name="price">{{result.price}}</div>
+						<div class="product-quantity" id="qty" name="qty">{{result.qty}}</div>
+					</div>
 				</div>
-				<div class="col-8">
-					<div class="product-name">Lorem Ipsum</div>
-					<div class="product-price">Php 500</div>
-					<div class="product-quantity">1</div>
-				</div>
-			</div>
-			<div class="row mt-1 mb-1 cart-product">
-				<div class="col-4">
-					<img src="bag.jpg" alt="product" class="product-picture">
-				</div>
-				<div class="col-8">
-					<div class="product-name">Lorem Ipsum</div>
-					<div class="product-price">Php 500</div>
-					<div class="product-quantity">1</div>
-				</div>
-			</div>
-		</div> 
+			{{/each}}
+		{{/if}}
 		<div class="row mt-5 mb-5 d-flex align-items-end" id="cart-checkout">
 			<div class="row d-flex align-items-end">
 				<div class="col">

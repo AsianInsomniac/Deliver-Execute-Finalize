@@ -106,12 +106,7 @@ a:hover {
   padding: 15px; /* Some padding */
   border-radius: 10px; /* Rounded corners */
   font-size: 18px; /* Increase font size */
-<<<<<<< Updated upstream
-  width: 4em;
-  height: 4em;
-=======
   width: 4%;
->>>>>>> Stashed changes
 }
 
 #top-button:hover {

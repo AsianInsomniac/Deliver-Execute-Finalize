@@ -3,28 +3,28 @@ const Cart = require('../model/cart.js');
 
 const productController = {
     getClassic: function(req,res){
-        req.session.item = classic;
-        res.render('fbclassic', {item: "classic"});
+        req.session.item = "classic";
+        res.render('fbclassic', {item: "classic", email: req.session.email, user: req.session.name});
     },
 
     getRed: function(req,res){
-        req.session.item = blue;
-        res.render('fbred', {item: "red"});
+        req.session.item = "blue";
+        res.render('fbred', {item: "red", email: req.session.email, user: req.session.name});
     },
 
     getPink: function(req,res){       
-        req.session.item = pink; 
-        res.render('fbpink', {item:"pink"});
+        req.session.item = "pink"; 
+        res.render('fbpink', {item:"pink", email: req.session.email, user: req.session.name});
     },
 
     getBlue: function(req,res){
-        req.session.item = blue;
-        res.render('fbblue', {item:"blue"});
+        req.session.item = "blue";
+        res.render('fbblue', {item:"blue", email: req.session.email, user: req.session.name});
     },
 
     getYellow: function(req,res){
-        req.session.item = yellow;
-        res.render('fbyellow', {item:"yellow"});
+        req.session.item = "yellow";
+        res.render('fbyellow', {item:"yellow", email: req.session.email, user: req.session.name});
     },
 
     //var cartItems = req.session.product; --> the "product" part can change depending on the name used in the #each HBS
@@ -44,44 +44,46 @@ const productController = {
     },
 
     addToCart: function(req, res){
+        console.log("I WAS HERE ASD")
         console.log(req.session.item);
         var e = req.session.email;
         var i = req.session.item;
-        var query1 = {email: e};
-        var query2 = {item: i};
+        // var query1 = {email: e};
+        // var query2 = {item: i};
 
         var product = {
             email: e,
             item: i,
-            qty: 0
+            qty: 1,
+            price: 1399
         }
         
-        db.findOne(Cart, query1, null, function(x){
-            if (x){
-                db.findOne(Cart, query2, null, function(y){
-                    if (y){
-                        res.render('fb' + i, {error: "Item in cart already"});
-                    }
-                    else{
-                        db.insertOne(Cart, product, function(flag){
-                            if (flag){
-                                console.log('Added to cart ' + i + ' for ' + e);
-                                res.render('fb' + i);
-                            }
-                        });
-                    }           
-                });
-            }
-            else
-            {
+        // db.findOne(Cart, query1, null, function(x){
+        //     if (x){
+        //         db.findOne(Cart, query2, null, function(y){
+        //             if (y){
+        //                 res.render('fb' + i, {error: "Item in cart already"});
+        //             }
+        //             else{
+        //                 db.insertOne(Cart, product, function(flag){
+        //                     if (flag){
+        //                         console.log('Added to cart ' + i + ' for ' + e);
+        //                         res.render('fb' + i);
+        //                     }
+        //                 });
+        //             }           
+        //         });
+        //     }
+        //     else
+        //     {
                 db.insertOne(Cart, product, function(add){
                     if (add){
                         console.log('Added to cart ' + i + ' for ' + e);
                         res.render('fb' + i);
                     }
                 });
-            }
-        });
+        //     }
+        // });
     }
 };
 
