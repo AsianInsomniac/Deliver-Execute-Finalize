@@ -7,15 +7,18 @@
               
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto align-items-left">
-                <a class="nav-texts nav-space" href="/shop">Shop</a> 
-                <a class="nav-texts nav-space" href="/about">About Us</a> 
-                <a class="nav-texts nav-space" href="/gallery">Photo Gallery</a> 
-                        
                 {{#if email}}
+					<p class="nav-texts nav-space">Welcome {{user}}!</p> 
+					<a class="nav-texts nav-space" href="/shop">Shop</a> 
+             	   	<a class="nav-texts nav-space" href="/about">About Us</a> 
+              		<a class="nav-texts nav-space" href="/gallery">Photo Gallery</a> 
                     <form class="nav-texts nav-space" action="/logout" method="post">
                         <button type="submit" id="logout">Logout</button>
                     </form>
                 {{else}}
+					<a class="nav-texts nav-space" href="/shop">Shop</a> 
+                	<a class="nav-texts nav-space" href="/about">About Us</a> 
+               		<a class="nav-texts nav-space" href="/gallery">Photo Gallery</a> 	
                     <a class="nav-texts nav-space" href="/login">Login</a>
                 {{/if}}                    
                           
