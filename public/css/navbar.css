@@ -76,8 +76,9 @@ button:hover {
 /* Center the image and position the close button */
 .imgcontainer {
   text-align: center;
-  margin: 12px 0 12px 0;
+  top: 12px;
   position: relative;
+  
 }
 
 img.logo {
@@ -98,7 +99,7 @@ span.psw {
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
+  /* position: fixed; Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
@@ -111,13 +112,38 @@ span.psw {
 /* Modal Content/Box */
 .modal-content {
   background: rgba(237,234,229,1);
-  margin: 5% auto 5% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  /* margin: 5% auto 5% auto; 5% from the top, 15% from the bottom and centered */
+  margin: 0px;
+  /* border: 1px solid #888; */
+  width: 100%; /* Could be more or less, depending on screen size */
+  height: 100%;
+  border-style: none;
+  padding: 0;
+  bottom: 175px
+}
+
+.row #id01 {
+  position: relative;
+  margin: 0px;
+  border-style: none;
+  padding: 0;
+  top: 0%;
+}
+
+.container-login {
+  width: 25%;
+  position: relative;
+  /* text-align: center; */
+  margin: auto;
+  bottom: 10px
+}
+
+.container-fluid {
+  background: rgba(237,234,229,1);
 }
 
 /* The Close Button (x) */
-.close {
+/* .close {
   position: absolute;
   right: 25px;
   top: 0;
@@ -130,7 +156,7 @@ span.psw {
 .close:focus {
   color: red;
   cursor: pointer;
-}
+} */
 
 /* Add Zoom Animation */
 .animate {

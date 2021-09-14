@@ -13,12 +13,10 @@
                         
                 {{#if email}}
                     <form class="nav-texts nav-space" action="/logout" method="post">
-                        <button type="submit" id="logout"> Logout </button>
+                        <button type="submit" id="logout">Logout</button>
                     </form>
                 {{else}}
-                    <a class="nav-texts nav-space" onclick="document.getElementById('id01').style.display='block'" style="width:auto;" >
-                        Login
-                    </a>
+                    <a class="nav-texts nav-space" href="/login">Login</a>
                 {{/if}}                    
                           
                 <a class="nav-texts nav-space" onclick="openCart()">
@@ -28,45 +26,6 @@
         </div>
      </div>
 </nav>
-
-{{#if openloginmodal}}
-    <script >
-	console.log("asdfasdf");
-        $(function () {
-            $(".modal").modal('show');
-        });
-    </script>
-{{/if}}
-<!-- Login Popup -->	   
-<div id="id01" class="modal">
-	<form class="modal-content animate" action="/login" method="post">
-		<div class="imgcontainer">
-			<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-			<img src="logo2.png" alt="Logo" class="logo">
-		</div>
-		
-		<div class="container">
-			<label for="email"><b>Email</b></label>
-			<input type="email" placeholder="Enter Email" name="email" id="email" required>
-
-			<label for="psw"><b>Password</b></label>
-			<input type="password" placeholder="Enter Password" name="password" id="password" required>
-					
-			<input type="submit" id="submit" value="Login"/>
-			<a href="/register"><button type="button">Not yet registered? Join now!</button></a>
-			{{!-- <label>
-				<input type="checkbox" checked="checked" name="remember"> Remember Email
-			</label> --}}
-		</div>
-
-		{{!-- <div class="container" style="background-color:#f1f1f1">
-			<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-			<span class="psw">Forgot <a href="#">password?</a></span>
-		</div> --}}
-	</form>
-</div>
-
-
 
 <!-- Cart Popup -->
 <div id="cart" class="sidenav">

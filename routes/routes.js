@@ -19,6 +19,7 @@ app.get('/gallery', controller.getGallery);
 // loginController
 app.get('/login/:id', loginController.getLogin);
 app.post('/login', loginController.postLogin);
+app.get('/login', loginController.getLoginScreen);
 
 // logoutController
 app.post("/logout", logoutController.getLogout);

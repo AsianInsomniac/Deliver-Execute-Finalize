@@ -7,12 +7,13 @@ input[type=email], input[type=text], input[type=password] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
+    font-size: 15px;
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
 
 /* Set a style for all buttons */
-button {
+/* button {
     font-family: Playfair Display;
     background: rgba(216,191,178,1);
     color: black;
@@ -22,10 +23,24 @@ button {
     cursor: pointer;
     width: 100%;
     font-weight: 600;
-}
+} */
 
 button:hover {
   opacity: 0.8;
+  text-align: center;
+}
+
+button, input[type=submit] {
+  font-family: Playfair Display;
+  background: rgba(216,191,178,1);
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 /* Center the image and position the close button */
@@ -41,12 +56,14 @@ img.logo {
 
 .container {
   padding: 16px;
+  font-size: 17px;
 }
 
 span.psw {
   float: right;
   padding-top: 16px;
   font-family: Playfair Display;
+  
 }
 
 /* Modal Content/Box */
@@ -54,7 +71,7 @@ span.psw {
   background: rgba(237,234,229,1);
   margin: 1% auto 1% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 70%; /* Could be more or less, depending on screen size */
+  width: 30%; /* Could be more or less, depending on screen size */
 }
 
   

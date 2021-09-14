@@ -50,7 +50,12 @@ const loginController = {
 				}
 					
         });
-    }
+    },
+
+	getLoginScreen: function(req, res) {
+		console.log("Opening Login Screen . . .");
+		res.render('login')
+	}
 }
 
 module.exports = loginController;
