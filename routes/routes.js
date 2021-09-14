@@ -50,6 +50,7 @@ app.get('/checkout', checkoutController.getCheckout);
 app.post('/checkout', checkoutController.postCheckout);
 
 // cartController
-app.get('/navbar', cartController.getCart);
+// app.get('/navbar', cartController.getCart);
+app.get('/cart', cartController.getCart);
 
 module.exports = app;
