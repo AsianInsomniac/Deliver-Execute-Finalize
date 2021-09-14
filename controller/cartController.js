@@ -9,7 +9,9 @@ const cartController = {
         var query1 = {email: e};
         console.log("Checking cart for " + e + "...");
             db.findMany(Cart, query1, {_id:-1}, null, 0, function(x){
-                res.render('navbar', x);
+                var result = x;
+                console.log(result);
+                res.render('cart', result);
             });
     },
 

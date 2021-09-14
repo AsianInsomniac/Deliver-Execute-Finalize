@@ -89,7 +89,7 @@ button:hover {
 }
 
 #welcome-text {
-  position: relative;
+  position: fixed;
   top: 1px;
   font-size: 10px;
 }
@@ -254,9 +254,9 @@ span.psw {
     bottom: 0px;
 }
 
-.checkout-btn:hover{
+/* .checkout-btn:hover{
   background: rgba(209,203,193,1);
-}
+} */
 
 .total {
     color: rgba(0,0,0,1);
@@ -295,16 +295,16 @@ span.psw {
 
 }
 
-.sidenav a {
+/* .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
   display: block;
   transition: 0.3s;
-}
+} */
 
-.sidenav a:hover {
+/* .sidenav a:hover {
   color: #f1f1f1;
 }
 
@@ -314,12 +314,12 @@ span.psw {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-}
+} */
 
-@media screen and (max-height: 450px) {
+/* @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-}
+} */
 
 /* PLUS/MINUS BUTTON */
 

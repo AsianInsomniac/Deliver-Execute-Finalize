@@ -51,40 +51,48 @@ const productController = {
         // var query1 = {email: e};
         // var query2 = {item: i};
 
-        var product = {
-            email: e,
-            item: i,
-            qty: 1,
-            price: 1399
+        if (e)
+        {
+            var product = {
+                email: e,
+                item: i,
+                qty: 1,
+                price: 1399
+            }
+            
+            // db.findOne(Cart, query1, null, function(x){
+            //     if (x){
+            //         db.findOne(Cart, query2, null, function(y){
+            //             if (y){
+            //                 res.render('fb' + i, {error: "Item in cart already"});
+            //             }
+            //             else{
+            //                 db.insertOne(Cart, product, function(flag){
+            //                     if (flag){
+            //                         console.log('Added to cart ' + i + ' for ' + e);
+            //                         res.render('fb' + i);
+            //                     }
+            //                 });
+            //             }           
+            //         });
+            //     }
+            //     else
+            //     {
+                    db.insertOne(Cart, product, function(add){
+                        if (add){
+                            console.log('Added to cart ' + i + ' for ' + e);
+                            res.render('fb' + i, {email: req.session.email, user: req.session.name});
+                        }
+                    });
+            //     }
+            // });
         }
-        
-        // db.findOne(Cart, query1, null, function(x){
-        //     if (x){
-        //         db.findOne(Cart, query2, null, function(y){
-        //             if (y){
-        //                 res.render('fb' + i, {error: "Item in cart already"});
-        //             }
-        //             else{
-        //                 db.insertOne(Cart, product, function(flag){
-        //                     if (flag){
-        //                         console.log('Added to cart ' + i + ' for ' + e);
-        //                         res.render('fb' + i);
-        //                     }
-        //                 });
-        //             }           
-        //         });
-        //     }
-        //     else
-        //     {
-                db.insertOne(Cart, product, function(add){
-                    if (add){
-                        console.log('Added to cart ' + i + ' for ' + e);
-                        res.render('fb' + i);
-                    }
-                });
-        //     }
-        // });
+        else
+        {
+            res.render('login');
+        }
     }
+        
 };
 
 module.exports = productController;
