@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <link href="/css/product.css" rel="stylesheet" />
+        <link href="/css/navbar.css" rel="stylesheet" />
+        <script src="/js/cart.js" type="text/javascript"></script>
+        <title>Product</title>
+    </head>
+    <body>
+        {{> navbar}}
+        <section>
+            <div class="container-fluid mt-5 mb-5 px-5">
+                <div class="row">
+                    <div class="col d-flex justify-content-end">
+                        <img src="bag.jpg" class="product-image">
+                    </div>
+                    <div class="col">
+                        <div class="productpage-name">Product name</div>
+                        <div class="productpage-price">Php 1000.00</div>
+                        <div class="productpage-desc">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia risus nibh, accumsan aliquet dolor condimentum quis. Nulla molestie volutpat elit at gravida. Duis aliquam sem in gravida pharetra. Nullam dapibus massa vulputate purus porta tristique. Integer ornare tincidunt metus eget blandit. Curabitur imperdiet, mi at auctor sagittis, diam elit euismod massa, nec condimentum mi eros id elit.
+                        </div>
+                        <div class="container position-relative d-flex justify-content-start">
+                            <button type="button" class="productpage-addcart ">Add to Cart</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </body>
+</html>
