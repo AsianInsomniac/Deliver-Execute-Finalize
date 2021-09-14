@@ -280,7 +280,7 @@ span.psw {
     color: #fff;
 }
 
-.sidenav {
+/* .sidenav {
     height: 100%;
     width: 0;
     z-index: 1;
@@ -293,7 +293,7 @@ span.psw {
     opacity: 1;
     position: fixed;
 
-}
+} */
 
 /* .sidenav a {
   padding: 8px 8px 8px 32px;

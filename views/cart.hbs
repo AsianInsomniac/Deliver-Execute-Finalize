@@ -12,47 +12,43 @@
 
     <body>
         {{> navbar}}
-        <div >
             <div class="row " >
                 <div id="cart">
-                <div class="container-fluid  h-100">
                     <div class="row mt-1 mb-4">
                         <div class="col-8 cart-title">Cart</div>
-                        <div class="col-4 ">
+                        {{!-- <div class="col-4 ">
                             <a href="javascript:void(0)" class="closebtn" onclick="closeCart()">&times;</a>
-                        </div>
+                        </div> --}}
                     </div>
-                    {{#if result}}
+                        {{#if result}}
                         {{#each result}}
                         <div class="row d-flex justify-content-center mt-5 mb-5" id="cart-items">
                             <div class="row mt-1 mb-1 cart-product">
                                 <div class="col-4">
-                                    <img src="fb{{result.item}}.png" alt="product" class="product-picture">
+                                    <img src="fb{{item}}.png" alt="product" class="product-picture">
                                 </div>
                                 <div class="col-8">
-                                    <div class="product-name" id="item" name="item">{{result.item}}</div>
-                                    <div class="product-price" id="price" name="price">{{result.price}}</div>
-                                    <div class="product-quantity" id="qty" name="qty">{{result.qty}}</div>
+                                    <div class="product-name" id="item" name="item">{{item}}</div>
+                                    <div class="product-price" id="price" name="price">{{price}}</div>
+                                    <div class="product-quantity" id="qty" name="qty">{{qty}}</div>
                                 </div>
                             </div>
                         {{/each}}
-                    {{/if}}
+                        {{/if}}
                     <div class="row mt-5 mb-5 d-flex align-items-end" id="cart-checkout">
                         <div class="row d-flex align-items-end">
                             <div class="col">
                                 <div class="total">Total:</div>
                             </div>
                             <div class="col">
-                                <div class="money">Php 1000</div>
+                                <div class="money">{{price}}</div>
                             </div>
                         </div>
                         <div class="row d-flex align-items-end justify-content-center">
                             <a href="/checkout"><button class="checkout-btn">Checkout</button></a>
                         </div>
                     </div>
-                </div>
             </div>
             </div>
-        </div>
     </body>
 </html>
