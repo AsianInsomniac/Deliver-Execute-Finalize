@@ -1,45 +1,6 @@
 const db = require('../model/db.js');
 
 const productController = {
-    getClassic: function(req,res){
-        item = req.params.itemname;
-        console.log(item);
-        
-        res.render('fbclassic', {success:"hidden"});
-    },
-
-    getRed: function(req,res){
-        item = req.params.itemname;
-        console.log(item);
-        req.session.show = item;
-        
-        res.render('fbred', {success:"hidden"});
-    },
-
-    getPink: function(req,res){
-        item = req.params.itemname;
-        console.log(item);
-        req.session.show = item;
-        
-        res.render('fbpink', {success:"hidden"});
-    },
-
-    getBlue: function(req,res){
-        item = req.params.itemname;
-        console.log(item);
-        req.session.show = item;
-        
-        res.render('fbblue', {success:"hidden"});
-    },
-
-    getYellow: function(req,res){
-        item = req.params.itemname;
-        console.log(item);
-        req.session.show = item;
-        
-        res.render('fbyellow', {success:"hidden"});
-    },
-
     //var cartItems = req.session.product; --> the "product" part can change depending on the name used in the #each HBS
     updateQty: function(req,res){
         var cartItems = req.session.product;
@@ -56,6 +17,7 @@ const productController = {
         }
 
     }
+
 };
 
 module.exports = productController;
