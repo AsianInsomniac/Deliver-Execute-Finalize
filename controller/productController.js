@@ -72,6 +72,15 @@ const productController = {
                     }           
                 });
             }
+            else
+            {
+                db.insertOne(Cart, product, function(add){
+                    if (add){
+                        console.log('Added to cart ' + i + ' for ' + e);
+                        res.render('fb' + i);
+                    }
+                });
+            }
         });
     }
 };
