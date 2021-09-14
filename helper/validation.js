@@ -23,17 +23,17 @@ const validation = {
         */
         var validation = [
 
-            // checks if `Email` is a valid email
-            check('Email', 'Email should not be empty or contain "@".').isEmail(),
+            // checks if `E-mail` is a valid email or is not empty
+            check('email', 'Please enter a valid e-mail address.').isEmail() || check('email', 'E-mail should not be empty.').notEmpty(),
 
-            // checks if Mobile is numeric
-            check('Mobile', 'Mobile Number should be Numberic.').isNumeric(),
+            // checks if mobile is numeric and valid
+            check('mobile', 'Please enter a valid mobile number.').isNumeric().isLength({min: 11, max: 11}),
 
             // checks if `Name` is not empty
-            check('Name', 'Name should not be empty.').notEmpty(),
+            check('name', 'Name should not be empty.').notEmpty(),
 
             // checks if `pw` contains at least 8 characters
-            check('pw', 'Passwords should contain at least 8 characters.').isLength({min: 8})
+            check('password', 'Password should contain at least 8 characters.').isLength({min: 8})
         ];
 
         return validation;

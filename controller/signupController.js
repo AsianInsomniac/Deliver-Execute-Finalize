@@ -5,7 +5,7 @@ const bp = require('body-parser');
 
 const User = require('../model/user.js');
 
-const {validationResult} = require('express-validator');
+const { validationResult } = require('express-validator');
 const saltRounds = 10;
 
 const signupController = {
@@ -15,18 +15,22 @@ const signupController = {
     },
 
     postSignUp: function (req, res) {
-		// console.log("asdfasdfasfasdfasfs " + req.body.email);
         var errors = validationResult(req);
 
 		if (!errors.isEmpty()) {
-            console.log("Error in Registering...");
             errors = errors.errors;
-            console.log(errors);
             var i;
-
             var details = {};
-            for(i = 0; i < errors.length; i++)
-                details[errors[i].param + 'Error'] = errors[i].msg;
+
+            for (i = 0; i < errors.length; i++)
+                details[errors[i].param + 'Error'] = errors[i].msg
+            
+            if (req.body.email != "")
+                details['email'] = req.body.email;
+            if (req.body.mobile != "")
+                details['mobile'] = req.body.mobile;
+            if (req.body.name != "")
+                details['name'] = req.body.name;
 
             res.render('register', details);
         }

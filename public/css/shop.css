@@ -4,7 +4,8 @@
 
 body {
     font-size: 14px;
- }
+    font-family: Playfair Display;
+}
 
  .shop-title {
     color: rgba(12,12,12,1);
