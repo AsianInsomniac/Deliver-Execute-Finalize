@@ -54,8 +54,15 @@ const loginController = {
     },
 
 	getLoginScreen: function(req, res) {
-		console.log("Opening Login Screen . . .");
-		res.render('login')
+		if (req.session.email) 
+		{
+			res.render('home');
+		}
+		else
+		{
+			console.log("Opening Login Screen . . .");
+			res.render('login')
+		}
 	}
 }
 
