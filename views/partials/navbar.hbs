@@ -28,7 +28,15 @@
         </div>
      </div>
 </nav>
-       
+
+{{#if openloginmodal}}
+    <script >
+	console.log("asdfasdf");
+        $(function () {
+            $(".modal").modal('show');
+        });
+    </script>
+{{/if}}
 <!-- Login Popup -->	   
 <div id="id01" class="modal">
 	<form class="modal-content animate" action="/login" method="post">
@@ -46,17 +54,19 @@
 					
 			<input type="submit" id="submit" value="Login"/>
 			<a href="/register"><button type="button">Not yet registered? Join now!</button></a>
-			<label>
+			{{!-- <label>
 				<input type="checkbox" checked="checked" name="remember"> Remember Email
-			</label>
+			</label> --}}
 		</div>
 
-		<div class="container" style="background-color:#f1f1f1">
+		{{!-- <div class="container" style="background-color:#f1f1f1">
 			<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
 			<span class="psw">Forgot <a href="#">password?</a></span>
-		</div>
+		</div> --}}
 	</form>
 </div>
+
+
 
 <!-- Cart Popup -->
 <div id="cart" class="sidenav">

@@ -12,7 +12,8 @@
     "hbs": "^4.1.2",
     "mongoose": "^5.13.7",
     "node": "^16.6.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "popups": "^1.1.3"
   },
   "name": "deliver-execute-finalize",
   "description": "By CSSWENG Team 1",

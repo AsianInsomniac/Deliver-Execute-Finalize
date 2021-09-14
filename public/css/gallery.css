@@ -19,19 +19,20 @@ body {
     background-size: cover;
     opacity: 1;
     position: absolute;
-    overflow: hidden;
 }
 
 /* Header Text */
 .header-text {
-    padding-left: 65vw;
-    color: rgba(255,255,255,1);
     position: relative;
+    padding-left: 65vw;
+    top: 60%;
+    color: rgba(255,255,255,1);
     font-family: Playfair Display;
     font-weight: Bold;
     font-size: 72px;
     opacity: 1;
     text-align: center;
+    
 }
 
 /* Frame */
