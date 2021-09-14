@@ -88,6 +88,12 @@ button:hover {
   
 }
 
+#welcome-text {
+  position: relative;
+  top: 1px;
+  font-size: 10px;
+}
+
 img.logo {
   width: 15%;
   border-radius: 50%;
