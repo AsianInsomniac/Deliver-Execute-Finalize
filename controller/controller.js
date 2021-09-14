@@ -26,7 +26,6 @@ const controller = {
 	getCart: function (req, res) {
 		res.render('cart', {email: req.session.email, user: req.session.name})
 	}
-
 }
 
 module.exports = controller;

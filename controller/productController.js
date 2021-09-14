@@ -8,7 +8,7 @@ const productController = {
     },
 
     getRed: function(req,res){
-        req.session.item = "blue";
+        req.session.item = "red";
         res.render('fbred', {item: "red", email: req.session.email, user: req.session.name});
     },
 
@@ -91,6 +91,33 @@ const productController = {
         {
             res.render('login');
         }
+        
+        // db.findOne(Cart, query1, null, function(x){
+        //     if (x){
+        //         db.findOne(Cart, query2, null, function(y){
+        //             if (y){
+        //                 res.render('fb' + i, {error: "Item in cart already"});
+        //             }
+        //             else{
+        //                 db.insertOne(Cart, product, function(flag){
+        //                     if (flag){
+        //                         console.log('Added to cart ' + i + ' for ' + e);
+        //                         res.render('fb' + i);
+        //                     }
+        //                 });
+        //             }           
+        //         });
+        //     }
+        //     else
+        //     {
+                db.insertOne(Cart, product, function(add){
+                    if (add){
+                        console.log('Added to cart ' + i + ' for ' + e);
+                        res.render('fb' + i, {email: req.session.email, user: req.session.name});
+                    }
+                });
+        //     }
+        // });
     }
         
 };
