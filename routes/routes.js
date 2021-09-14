@@ -51,7 +51,5 @@ app.post('/checkout', checkoutController.postCheckout);
 
 // cartController
 app.get('/navbar', cartController.getCart);
-app.post('/navbar', cartController.deleteCart);
-
 
 module.exports = app;
