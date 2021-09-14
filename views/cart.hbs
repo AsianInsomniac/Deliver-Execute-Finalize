@@ -14,12 +14,12 @@
         {{> navbar}}
             <div class="row " >
                 <div id="cart">
-                    <div class="row mt-1 mb-4">
+                    {{!-- <div class="row mt-1 mb-4"> --}}
                         <div class="col-8 cart-title">Cart</div>
                         {{!-- <div class="col-4 ">
                             <a href="javascript:void(0)" class="closebtn" onclick="closeCart()">&times;</a>
                         </div> --}}
-                    </div>
+                    {{!-- </div> --}}
                         {{#if result}}
                         {{#each result}}
                         <div class="row d-flex justify-content-center mt-5 mb-5" id="cart-items">
@@ -33,6 +33,7 @@
                                     <div class="product-quantity" id="qty" name="qty">{{qty}}</div>
                                 </div>
                             </div>
+                            {{"\n"~}}
                         {{/each}}
                         {{/if}}
                     <div class="row mt-5 mb-5 d-flex align-items-end" id="cart-checkout">
