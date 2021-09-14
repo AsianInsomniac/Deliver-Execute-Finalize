@@ -16,17 +16,20 @@
           <form class="modal-content animate" method="post">
             <div class="container">
                 <label for="email"><b>Email</b></label>
-                <input type="email" placeholder="Enter Email" name="email" id="email" required>
-
+                <input type="email" placeholder="Enter Email" name="email" id="email">
+                <p class="error">{{EmailError}}{{errormessage}}</p>
+                
                 <label for="email"><b>Mobile Number</b></label>
-                <input type="text" placeholder="Enter Mobile Number" id="mobile" name="mobile" required>
+                <input type="text" placeholder="Enter Mobile Number" id="mobile" name="mobile">
+                <p class="error">{{MobileError}}</p>
 
                 <label for="email"><b>Name</b></label>
-                <input type="text" placeholder="Enter Name" id="name" name="name" required>
-
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" id="password" name="password" required>
+                <input type="text" placeholder="Enter Name" id="name" name="name">
+                <p class="error">{{NameError}}</p>
                 
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" id="password" name="password">
+                <p class="error">{{pwError}}</p>
                 <input type="submit" id="submit" value="Submit" />
             </div>
           </form>

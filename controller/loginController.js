@@ -40,13 +40,13 @@ const loginController = {
 						}
 						else{
 							console.log("Password not found!");
-							alert('Username or Password is not found!');
+							res.render('login' , {error: 'Invalid User or Password'});
 						}
 						
 					});
 				else {
 					console.log("invalid user or pass");
-					res.render('home' ,{openloginmodal: true});
+					res.render('login' , {error: 'Invalid User or Password'});
 				}
 					
         });

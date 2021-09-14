@@ -43,6 +43,12 @@ button, input[type=submit] {
   font-size: 15px;
 }
 
+/* error message */
+.error {
+  color: red;
+  margin-top:1px;
+}
+
 /* Center the image and position the close button */
 .imgcontainer {
   text-align: center;

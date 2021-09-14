@@ -17,9 +17,13 @@ hbs.registerPartials(__dirname + '/views/partials');
 dotenv.config();
 const port = process.env.PORT;
 
-app.use(bodyParser.urlencoded({ extended: false }));
+// app.configure(function(){
+// 	app.use(express.bodyParser());
+//   });
+
+// app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 db.connect();
@@ -30,7 +34,6 @@ app.use(session({
 	saveUninitialized: false,
 	store: MongoStore.create({ mongoUrl: url })
 }));
-
 app.use('/', routes);
 
 app.listen(port, function(){

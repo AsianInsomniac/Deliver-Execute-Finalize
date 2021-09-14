@@ -7,6 +7,7 @@ const aboutController = require('../controller/aboutController');
 const cartController = require('../controller/cartController');
 const productController = require('../controller/productController');
 const checkoutController = require('../controller/checkoutController');
+const validation = require('../helper/validation.js');
 const app = express();
 
 // controller
@@ -26,18 +27,18 @@ app.post("/logout", logoutController.getLogout);
 
 // signupController
 app.get('/register', signupController.getSignUp);
-app.post('/register', signupController.postSignUp);
+app.post('/register', validation.signupValidation(), signupController.postSignUp);
 
 // aboutUsController
 app.get('/about', aboutController.getAbout);
 app.post('/about', aboutController.postAbout);
 
 // productController
-// app.get('/fbclassic', productController.getClassic);
-// app.get('/fbred', productController.getRed);
-// app.get('/fbpink', productController.getPink);
-// app.get('/fbblue', productController.getBlue);
-// app.get('/fbyellow', productController.getYellow);
+//app.get('/fbclassic', productController.getClassic);
+//app.get('/fbred', productController.getRed);
+//app.get('/fbpink', productController.getPink);
+//app.get('/fbblue', productController.getBlue);
+//app.get('/fbyellow', productController.getYellow);
 //app.post('/product', productController.postProduct);
 
 // checkoutController

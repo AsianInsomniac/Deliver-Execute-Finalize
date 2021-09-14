@@ -1,5 +1,7 @@
 const db = require('../model/db.js');
 const bcrypt = require('bcrypt');
+const express = require('express');
+const bp = require('body-parser');
 
 const User = require('../model/user.js');
 
@@ -13,12 +15,13 @@ const signupController = {
     },
 
     postSignUp: function (req, res) {
-		var errors = validationResult(req);
-        
+		// console.log("asdfasdfasfasdfasfs " + req.body.email);
+        var errors = validationResult(req);
+
 		if (!errors.isEmpty()) {
             console.log("Error in Registering...");
             errors = errors.errors;
-
+            console.log(errors);
             var i;
 
             var details = {};
@@ -43,20 +46,24 @@ const signupController = {
 
                 db.findOne(User, {email:email}, '', function (result) {
                     if (result) {
+                        console.log("Email is Taken")
                         var details = {
                             flag: false,
                             error: 'Email taken.'
                           };
-                        res.render('register', details);
-                        };
+                        res.render('register', {errormessage: 'Email Taken'});
+                        }
+                        else{
+                            db.insertOne(User, user, function(flag){
+                                if(flag){
+                                    console.log('Created account of ' + name);
+                                    res.render('home');
+                                }
+                            });
+                        }
                 });
 
-				db.insertOne(User, user, function(flag){
-					if(flag){
-						console.log('Created account of ' + name);
-						res.render('home');
-					}
-                });
+				
 			});
 		}
     },

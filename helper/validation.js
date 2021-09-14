@@ -1,3 +1,4 @@
+
 // import module `check` from `express-validator`
 const { check } = require('express-validator');
 
@@ -22,19 +23,17 @@ const validation = {
         */
         var validation = [
 
-            // checks if `fName` is not empty
-            check('fName', 'First name should not be empty.').notEmpty(),
+            // checks if `Email` is a valid email
+            check('Email', 'Email should not be empty or contain "@".').isEmail(),
 
-            // checks if lName is not empty
-            check('lName', 'Last name should not be empty.').notEmpty(),
+            // checks if Mobile is numeric
+            check('Mobile', 'Mobile Number should be Numberic.').isNumeric(),
 
-            // checks if `idNum` contains exactly 8 digits
-            check('idNum', 'ID number should contain 8 digits.')
-            .isLength({min: 8, max: 8}),
+            // checks if `Name` is not empty
+            check('Name', 'Name should not be empty.').notEmpty(),
 
             // checks if `pw` contains at least 8 characters
-            check('pw', 'Passwords should contain at least 8 characters.')
-            .isLength({min: 8})
+            check('pw', 'Passwords should contain at least 8 characters.').isLength({min: 8})
         ];
 
         return validation;
