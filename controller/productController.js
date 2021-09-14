@@ -44,12 +44,11 @@ const productController = {
     },
 
     addToCart: function(req, res){
-        console.log("I WAS HERE ASD")
-        console.log(req.session.item);
+        console.log("I WAS HERE ASD");
         var e = req.session.email;
         var i = req.session.item;
-        // var query1 = {email: e};
-        // var query2 = {item: i};
+        var query1 = {email: e};
+        var query2 = {item: i};
 
         if (e)
         {
@@ -59,65 +58,34 @@ const productController = {
                 qty: 1,
                 price: 1399
             }
-            
-            // db.findOne(Cart, query1, null, function(x){
-            //     if (x){
-            //         db.findOne(Cart, query2, null, function(y){
-            //             if (y){
-            //                 res.render('fb' + i, {error: "Item in cart already"});
-            //             }
-            //             else{
-            //                 db.insertOne(Cart, product, function(flag){
-            //                     if (flag){
-            //                         console.log('Added to cart ' + i + ' for ' + e);
-            //                         res.render('fb' + i);
-            //                     }
-            //                 });
-            //             }           
-            //         });
-            //     }
-            //     else
-            //     {
-                    db.insertOne(Cart, product, function(add){
-                        if (add){
-                            console.log('Added to cart ' + i + ' for ' + e);
-                            res.render('fb' + i, {email: req.session.email, user: req.session.name});
+            var count = 0;
+            db.findMany(Cart, query1, {_id:-1}, null, 0, function(x){
+                if (x){
+                    for(j in x){
+                        console.log(x[j].item)
+                        if (x[j].item == i){                            
+                            count++;
+                            console.log(count + " ASKJDSADAS");
+                            res.render('fb' + i, {error: 'Item in cart already', email: req.session.email, user: req.session.name});
                         }
-                    });
-            //     }
-            // });
+                    }
+                    if (count == 0)
+                    {
+                        db.insertOne(Cart, product, function(flag){
+                            if (flag){
+                                console.log('Added to cart ' + i + ' for ' + e);
+                                res.render('fb' + i, {email: req.session.email, user: req.session.name});
+                            }
+                        });
+                    }
+                   
+                }
+            });
         }
         else
         {
             res.render('login');
         }
-        
-        // db.findOne(Cart, query1, null, function(x){
-        //     if (x){
-        //         db.findOne(Cart, query2, null, function(y){
-        //             if (y){
-        //                 res.render('fb' + i, {error: "Item in cart already"});
-        //             }
-        //             else{
-        //                 db.insertOne(Cart, product, function(flag){
-        //                     if (flag){
-        //                         console.log('Added to cart ' + i + ' for ' + e);
-        //                         res.render('fb' + i);
-        //                     }
-        //                 });
-        //             }           
-        //         });
-        //     }
-        //     else
-        //     {
-                db.insertOne(Cart, product, function(add){
-                    if (add){
-                        console.log('Added to cart ' + i + ' for ' + e);
-                        res.render('fb' + i, {email: req.session.email, user: req.session.name});
-                    }
-                });
-        //     }
-        // });
     }
         
 };
