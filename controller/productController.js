@@ -1,19 +1,6 @@
 const db = require('../model/db.js');
 
 const productController = {
-    getProduct: function(req,res){
-        item = req.params.id;
-        console.log(item);
-        req.session.show = item;
-        var p = {
-            item: "",
-            qty: 0,
-            image: "",
-            info: ""
-        };
-        res.render('product', {success:"hidden"});
-    },
-
     //var cartItems = req.session.product; --> the "product" part can change depending on the name used in the #each HBS
     updateQty: function(req,res){
         var cartItems = req.session.product;
@@ -29,10 +16,8 @@ const productController = {
             res.render("cart", {"products" : req.session.cartItems});
         }
 
-    },
-    postProduct: function(req,res){
-
     }
+
 };
 
 module.exports = productController;
