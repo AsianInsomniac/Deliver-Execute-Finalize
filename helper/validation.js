@@ -24,7 +24,7 @@ const validation = {
         var validation = [
 
             // checks if `E-mail` is a valid email or is not empty
-            check('email', 'Please enter a valid e-mail address.').isEmail() || check('email', 'E-mail should not be empty.').notEmpty(),
+            check('email', 'Please enter a valid e-mail address.').isEmail(),
 
             // checks if mobile is numeric and valid
             check('mobile', 'Please enter a valid mobile number.').isNumeric().isLength({min: 11, max: 11}),
