@@ -3,6 +3,7 @@ const Checkout = require('../model/checkout.js');
 
 const checkoutController = {
     getCheckout: function(req,res){
+        console.log("hereeeee")
         res.render('checkout', {success:"hidden"});
     },
 

@@ -1,16 +1,27 @@
 html,body{
   height:100%;
+  
 }
 
 .flex-fill {
   flex:1;
 }
 
-.frame{
-  background-image: url("bag.jpg");
-}
-
 .container-fluid{
   font-family: Playfair Display;
   
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+.header{
+  font-family: Playfair Display;
+  font-size: 92px;
+  color:white;position: relative;
+}
+
+.text{
+  font-family: Playfair Display;
+  font-size: 36px;
+  color:white;position: relative;
 }
