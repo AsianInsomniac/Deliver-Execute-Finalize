@@ -11,7 +11,7 @@ const cartController = {
             db.findMany(Cart, query1, {_id:-1}, null, 0, function(x){
                 var result = x;
                 console.log(result);
-                res.render('cart', result);
+                res.render('cart', {result: result, email: req.session.email, user: req.session.name});
             });
     },
 
