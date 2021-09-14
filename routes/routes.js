@@ -39,7 +39,11 @@ app.get('/fbred', productController.getRed);
 app.get('/fbpink', productController.getPink);
 app.get('/fbblue', productController.getBlue);
 app.get('/fbyellow', productController.getYellow);
-app.post('/shop', productController.addToCart);
+app.post('/fbblue', productController.addToCart);
+app.post('/fbclassic', productController.addToCart);
+app.post('/fbred', productController.addToCart);
+app.post('/fbyellow', productController.addToCart);
+app.post('/fbpink', productController.addToCart);
 
 // checkoutController
 app.get('/checkout', checkoutController.getCheckout);
