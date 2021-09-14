@@ -29,6 +29,9 @@ const productController = {
             res.render("cart", {"products" : req.session.cartItems});
         }
 
+    },
+    postProduct: function(req,res){
+
     }
 };
 
