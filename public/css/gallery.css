@@ -1,20 +1,41 @@
 * {
     box-sizing: border-box;
-  }
-  body {
+ }
+
+body {
     font-size: 14px;
-  }
-  .v76_5 {
-    width: 100%;
-    height: 1537px;
     background: rgba(216,191,178,1);
+}
+
+.header {
+    width: 100%;
+    height: 40vh;
     opacity: 1;
     position: relative;
-    top: 0px;
-    left: 0px;
     overflow: hidden;
-  }
-  .v168_3 {
+    background: url("/images/product.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    overflow: hidden;
+}
+
+/* Header Text */
+.header-text {
+    padding-left: 65vw;
+    color: rgba(255,255,255,1);
+    position: relative;
+    font-family: Playfair Display;
+    font-weight: Bold;
+    font-size: 72px;
+    opacity: 1;
+    text-align: center;
+}
+
+/* Frame */
+.frame {
     width: 100%;
     height: 856px;
     background: rgba(125,115,115,1);
@@ -23,36 +44,13 @@
     top: 565px;
     left: 112px;
     overflow: hidden;
-  }
-  .v76_7 {
-    width: 100%;
-    height: 465px;
-    background: url("../images/v76_7.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: absolute;
-    top: 54px;
-    left: 0px;
-    overflow: hidden;
-  }
-  .v76_8 {
-    width: 454px;
-    color: rgba(255,255,255,1);
-    position: absolute;
-    top: 315px;
-    left: 915px;
-    font-family: Playfair Display;
-    font-weight: Bold;
-    font-size: 72px;
-    opacity: 1;
-    text-align: center;
-  }
-  .v96_23 {
+}
+
+/* Big Image*/
+.featured-img {
     width: 100%;
     height: 581px;
-    background: url("../images/v96_23.png");
+    background: url("/images/product.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -61,8 +59,10 @@
     top: 599px;
     left: 148px;
     overflow: hidden;
-  }
-  .v168_8 {
+}
+
+/* Big Image Text BG */
+.featured-text-bg {
     width: 100%;
     height: 119px;
     background: rgba(125,115,115,0.6000000238418579);
@@ -71,8 +71,10 @@
     top: 1061px;
     left: 148px;
     overflow: hidden;
-  }
-  .v168_9 {
+}
+
+/* Big Image Text */
+.featured-text {
     width: 100%;
     color: rgba(12,12,12,1);
     position: absolute;
@@ -80,8 +82,8 @@
     left: 161px;
     opacity: 1;
     text-align: left;
-  }
-  .v169_10 {
+}
+.featured-text-sm {
     width: 93px;
     color: rgba(12,12,12,1);
     position: absolute;
@@ -92,11 +94,13 @@
     font-size: 18px;
     opacity: 1;
     text-align: left;
-  }
-  .v168_2 {
+}
+
+/* Photos */
+.thumbnail {
     width: 185px;
     height: 185px;
-    background: url("../images/v168_2.png");
+    background: url("/images/product.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -105,11 +109,12 @@
     top: 1210px;
     left: 148px;
     overflow: hidden;
-  }
-  .v168_4 {
+}
+
+.v168_4 {
     width: 185px;
     height: 185px;
-    background: url("../images/v168_4.png");
+    background: url("/images/product.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -118,11 +123,11 @@
     top: 1210px;
     left: 387px;
     overflow: hidden;
-  }
-  .v168_7 {
+}
+.v168_7 {
     width: 185px;
     height: 185px;
-    background: url("../images/v168_7.png");
+    background: url("/images/product.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -131,11 +136,11 @@
     top: 1210px;
     left: 627px;
     overflow: hidden;
-  }
-  .v168_5 {
+}
+.v168_5 {
     width: 185px;
     height: 185px;
-    background: url("../images/v168_5.png");
+    background: url("/images/product.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -144,11 +149,11 @@
     top: 1210px;
     left: 1107px;
     overflow: hidden;
-  }
-  .v168_6 {
+}
+.v168_6 {
     width: 185px;
     height: 185px;
-    background: url("../images/v168_6.png");
+    background: url("/images/product.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -157,8 +162,10 @@
     top: 1210px;
     left: 867px;
     overflow: hidden;
-  }
-  .v97_3 {
+}
+
+/* Photo Gallery Title */
+.v97_3 {
     width: 268px;
     color: rgba(12,12,12,1);
     position: absolute;
@@ -169,5 +176,4 @@
     font-size: 48px;
     opacity: 1;
     text-align: center;
-  }
-  
+}  
