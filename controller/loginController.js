@@ -33,10 +33,11 @@ const loginController = {
 						if(equal){
 							
 							req.session.email = x.email;
+							req.session.name = x.name;
 							
 							console.log(' Successfully Logged In ' + x.email);
 
-							res.render('home', {email: x.email});
+							res.render('home', {email: x.email, user: x.name});
 						}
 						else{
 							console.log("Password not found!");
