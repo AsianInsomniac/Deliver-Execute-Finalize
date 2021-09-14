@@ -4,27 +4,27 @@ const Cart = require('../model/cart.js');
 const productController = {
     getClassic: function(req,res){
         req.session.item = "classic";
-        res.render('fbclassic', {item: "classic"});
+        res.render('fbclassic', {item: "classic", email: req.session.email, user: req.session.name});
     },
 
     getRed: function(req,res){
         req.session.item = "blue";
-        res.render('fbred', {item: "red"});
+        res.render('fbred', {item: "red", email: req.session.email, user: req.session.name});
     },
 
     getPink: function(req,res){       
         req.session.item = "pink"; 
-        res.render('fbpink', {item:"pink"});
+        res.render('fbpink', {item:"pink", email: req.session.email, user: req.session.name});
     },
 
     getBlue: function(req,res){
         req.session.item = "blue";
-        res.render('fbblue', {item:"blue"});
+        res.render('fbblue', {item:"blue", email: req.session.email, user: req.session.name});
     },
 
     getYellow: function(req,res){
         req.session.item = "yellow";
-        res.render('fbyellow', {item:"yellow"});
+        res.render('fbyellow', {item:"yellow", email: req.session.email, user: req.session.name});
     },
 
     //var cartItems = req.session.product; --> the "product" part can change depending on the name used in the #each HBS
@@ -54,7 +54,8 @@ const productController = {
         var product = {
             email: e,
             item: i,
-            qty: 1
+            qty: 1,
+            price: 1399
         }
         
         // db.findOne(Cart, query1, null, function(x){
