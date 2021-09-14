@@ -11,10 +11,11 @@ body {
     position: relative;
     font-family: Playfair Display;
     font-weight: Bold;
-    font-size: 48px;
+    font-size: 40px;
     opacity: 1;
     text-align: center;
 }
+
 
 .item-container{
     width: auto;
@@ -35,12 +36,12 @@ body {
 .item-name{
     color: rgba(12,12,12,1);
     font-family: Playfair Display;
-    font-size: 24px;
+    font-size: 17px;
     font-weight: Bold;
 }
 
 .item-price{
     color: rgba(12,12,12,1);
     font-family: Playfair Display;
-    font-size: 16px;
+    font-size: 14px;
 }
