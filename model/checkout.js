@@ -1,5 +1,20 @@
 const mongoose = require('mongoose');
 
+const cartSchema = new mongoose.Schema({
+    item:{
+        type: String,
+        required: true,
+    },
+    qty:{
+        type: Number,
+        required: true,
+    },
+    price:{
+        type: Number,
+        required: true,
+    }
+});
+
 const checkoutSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -35,12 +50,8 @@ const checkoutSchema = new mongoose.Schema({
     picture: {
         type: String,
         required: true
-    },    
-    cart: [{
-        item: String,
-        qty: Number,
-        price: Number
-    }]
+    },
+    cart: [cartSchema]
 });
 
 module.exports = mongoose.model ('Checkout', checkoutSchema);

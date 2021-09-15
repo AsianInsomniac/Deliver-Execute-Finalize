@@ -27,7 +27,7 @@ const checkoutController = {
     },
 
     postCheckout: function(req,res){
-        var email = req.body.email;
+        var emailbody = req.body.email;
         var mobile_no = req.body.mobile_no;
         var fname = req.body.fname;
         var lname = req.body.lname;
@@ -36,7 +36,7 @@ const checkoutController = {
         var province = req.body.province;
         var city = req.body.city;
         var picture = req.body.picture;
-        var cart = [];
+        let cart = [];
         var e = req.session.email;
         var query1 = {email: e};
 
@@ -50,38 +50,39 @@ const checkoutController = {
                     price: x[i].price,
                 }
                 cart.push(temp);
+                console.log(cart);
+                console.log("PUSHH ++++++")  
             }
-        });
 
-        console.log(cart);
-
-        var checkout = {
-            email: email,
-            mobile_no: mobile_no,
-            fname: fname,
-            lname: lname,
-            street: street,
-            apartment: apartment,
-            province: province,
-            city: city,
-            picture: picture,
-            cart: cart
-        }
-
-        db.insertOne(Checkout, checkout, function(flag){
-            if (flag){
-                console.log(checkout);
-                console.log('Checkout for ' + fname + " " + lname);
-                res.render('checkout', {email : req.session.email, user:req.session.name})
+            for (i in cart){
+                console.log(cart[i].item);
+                console.log(cart[i].qty);
+                console.log(cart[i].price);
             }
-        });
-    },
 
-    deleteCart: function(req,res){
-        var e = req.session.email;
-        db.deleteMany(Cart, function(x){
-            console.log("deleted cart for" +  e);
-        });
+            var checkout = {
+                email: emailbody,
+                mobile_no: mobile_no,
+                fname: fname,
+                lname: lname,
+                street: street,
+                apartment: apartment,
+                province: province,
+                city: city,
+                picture: picture,
+                cart: cart
+            }
+    
+            db.insertOne(Checkout, checkout, function(flag){
+                if (flag){
+                    console.log(checkout);
+                    console.log('Checkout for ' + fname + " " + lname);
+                    res.render('checkout', {email : req.session.email, user:req.session.name})
+                }
+            });
+        }); 
+
+        db.deleteMany(Cart, {email: emailbody});
     },
 };
 
