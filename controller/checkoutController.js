@@ -21,6 +21,7 @@ const checkoutController = {
                 }
                 console.log(total);
                 console.log(cart);
+
                 res.render('checkout', {res: cart, total: total, email: req.session.email, user: req.session.name});
             });
     },
@@ -35,8 +36,24 @@ const checkoutController = {
         var province = req.body.province;
         var city = req.body.city;
         var picture = req.body.picture;
+        var cart = [];
+        var e = req.session.email;
+        var query1 = {email: e};
 
         console.log("checking out!");
+
+        db.findMany(Cart, query1, {_id:-1}, null, 0, function(x){
+            for(i in x){
+                var temp ={
+                    item: x[i].item,
+                    qty: x[i].qty,
+                    price: x[i].price,
+                }
+                cart.push(temp);
+            }
+        });
+
+        console.log(cart);
 
         var checkout = {
             email: email,
@@ -47,11 +64,13 @@ const checkoutController = {
             apartment: apartment,
             province: province,
             city: city,
-            picture: picture
+            picture: picture,
+            cart: cart
         }
 
         db.insertOne(Checkout, checkout, function(flag){
             if (flag){
+                console.log(checkout);
                 console.log('Checkout for ' + fname + " " + lname);
                 res.render('checkout', {email : req.session.email, user:req.session.name})
             }
