@@ -1,6 +1,7 @@
 const db = require('../model/db.js');
 const Checkout = require('../model/checkout.js');
 const Cart = require('../model/cart.js');
+let alert = require('alert');
 
 const checkoutController = {
     getCheckout: function(req,res){
@@ -77,7 +78,8 @@ const checkoutController = {
                 if (flag){
                     console.log(checkout);
                     console.log('Checkout for ' + fname + " " + lname);
-                    res.render('checkout', {email : req.session.email, user:req.session.name})
+                    alert("Checkout Complete!");
+                    res.render('shop', {email : req.session.email, user:req.session.name})
                 }
             });
         }); 

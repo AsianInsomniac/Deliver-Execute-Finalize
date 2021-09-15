@@ -70,7 +70,7 @@ const productController = {
                                 db.updateOne(Cart, {_id: x[j]._id}, {qty: q});
                             count++;
                             console.log(count + " ASKJDSADAS");
-                            res.render('fb' + i, {error: 'Item in cart updated', email: req.session.email, user: req.session.name});
+                            res.render('fb' + i, {success: 'Item in cart updated', email: req.session.email, user: req.session.name});
                         }
                     }
                     if (count == 0)
