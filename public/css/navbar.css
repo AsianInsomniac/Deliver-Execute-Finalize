@@ -18,12 +18,43 @@
     margin-left: 25px;
 }
 
+#error-page {
+  font-family: Playfair Display;
+  text-align: center;
+  font-style: Bold;
+  font-size: 200px;
+  color: black;
+  padding-top: 100px;
+}
+
+#text-p {
+  font-family: Playfair Display;
+  text-align: center;
+  font-size: 50px;
+  font-style: Regular;
+  color: black;
+}
+
 a:hover {
     color:white;
     transition: 0.25s;
     cursor:pointer;
 }
 
+.amb-text {
+  color: black;
+  text-align: center;
+}
+
+#amb-name {
+  font-size: 30px;
+  font-style: Bold;
+}
+
+#amb-pos {
+  margin-top: 0px;
+  font-style: Regular;
+}
 
 /* LOGIN */
 
