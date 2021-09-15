@@ -19,6 +19,8 @@ const aboutController = {
             message: message,
             name: name
         }
+        
+        console.log("this is the contents: " + about.email);
 
         db.insertOne(About, about, function(flag) {
             if(flag){
