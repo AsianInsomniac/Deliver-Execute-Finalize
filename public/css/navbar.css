@@ -49,11 +49,13 @@ a:hover {
 #amb-name {
   font-size: 30px;
   font-style: Bold;
+  line-height: 5px;
 }
 
 #amb-pos {
   margin-top: 0px;
   font-style: Regular;
+  line-height: 1px;
 }
 
 /* LOGIN */
