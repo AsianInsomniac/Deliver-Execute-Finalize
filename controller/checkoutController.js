@@ -16,6 +16,7 @@ const checkoutController = {
         var apartment = req.body.apartment;
         var province = req.body.province;
         var city = req.body.city;
+        var picture = req.body.picture;
 
         console.log("checking out!");
 
@@ -27,7 +28,8 @@ const checkoutController = {
             street: street,
             apartment: apartment,
             province: province,
-            city: city
+            city: city,
+            picture: picture
         }
 
         db.insertOne(Checkout, checkout, function(flag){
