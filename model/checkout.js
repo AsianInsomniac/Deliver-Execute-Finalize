@@ -35,7 +35,15 @@ const checkoutSchema = new mongoose.Schema({
     picture: {
         type: String,
         required: true
-    }
+    },    
+    cart: [
+        {
+            email: String,
+            item: String,
+            qty: Number,
+            price: Number
+        }
+    ]
 });
 
 module.exports = mongoose.model ('Checkout', checkoutSchema);
