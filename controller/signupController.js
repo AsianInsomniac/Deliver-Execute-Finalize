@@ -67,7 +67,8 @@ const signupController = {
                                             bcrypt.compare(pass, result.password, function (err, equal) {
                                                 if (equal) {
                                                     req.session.email = result.email;
-                                                    res.render('home', { email: result.email });
+                                                    req.session.name = result.name;
+                                                    res.render('home', { email: result.email, user: result.name });
                                                 }
                                             });
                                     });
