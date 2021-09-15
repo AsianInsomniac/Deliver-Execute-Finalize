@@ -168,6 +168,12 @@ a:hover {
 #contact {
     background-color: rgba(39,35,35,1);
     width: auto;
+    height: auto;
+    color:white;
+}
+
+#form-text{
+    color:white;
 }
 
 .contact-title {
@@ -221,9 +227,6 @@ input[type=email], input[type=text], input[type=password] {
 .submit:hover {
   opacity: 0.8;
 }
-#form-text {
-    color:rgb(22, 19, 15);
-}
 span.psw {
   float: right;
   padding-top: 16px;
@@ -233,13 +236,13 @@ span.psw {
 /* Modal Content/Box */
 
 form.modal-content {
-  background-color: rgb(228, 218, 209);
+  background-color: rgba(39,35,35,1);
   /* margin:1111% auto 1% auto; 5% from the top, 15% from the bottom and centered */
-  bottom: 1px;
+  bottom: 0px;
   text-align: left;
   margin-right: auto;
   margin-left: auto;
-  border: 1px solid #888;
+  /*border: 1px solid #888;*/
   width: 75%; /* Could be more or less, depending on screen size */
   color: green;
 }
@@ -247,5 +250,4 @@ form.modal-content {
 .container-form {
     padding: 16px;
     color: white;
-    margin-bottom: 1px;
 }
