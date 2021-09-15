@@ -47,15 +47,15 @@ const productController = {
         console.log("I WAS HERE ASD");
         var e = req.session.email;
         var i = req.session.item;
+        var q = req.body.qty;
         var query1 = {email: e};
-        var query2 = {item: i};
-
+        
         if (e)
         {
             var product = {
                 email: e,
                 item: i,
-                qty: 1,
+                qty: q,
                 price: 1399
             }
             var count = 0;
@@ -74,7 +74,7 @@ const productController = {
                         db.insertOne(Cart, product, function(flag){
                             if (flag){
                                 console.log('Added to cart ' + i + ' for ' + e);
-                                res.render('fb' + i, {email: req.session.email, user: req.session.name});
+                                res.render('fb' + i, {success: 'Item added to cart', email: req.session.email, user: req.session.name});
                             }
                         });
                     }
