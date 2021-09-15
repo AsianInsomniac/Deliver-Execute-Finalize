@@ -28,8 +28,8 @@
                                     <img src="fb{{item}}.png" alt="product" class="product-picture">
                                 </div>
                                 <span class="col-8">
-                                    <div class="product-name" id="item" name="item"><b>Name: </b> {{item}}</div>
-                                    <div class="product-price" id="price" name="price"><b>Price: </b>{{price}}</div>
+                                    <div class="product-name" id="item" name="item"><b>Name: </b> The Isla Fashion {{item}}</div>
+                                    <div class="product-price" id="price" name="price"><b>Price: </b>Php {{price}}</div>
                                     <div class="product-quantity" id="qty" name="qty"><b>Qty: </b>{{qty}}</div>
                                 </div>
                             </div>
@@ -37,18 +37,19 @@
                         {{/each}}
                         {{/if}}
                     <div class="row mt-5 mb-5 d-flex align-items-end" id="cart-checkout">
-                        <div>
-                            <div class="col">
-                                <div class="total">Total:</div>
-                            </div>
-                            <div class="col">
-                                <div class="money">{{price}}</div>
-                            </div>
+                        <div id="total-row">
+                            <span class="col">
+                                <span class="total">Total:   </span>
+                            </span>
+                            <span class="col">
+                                <span class="money">Php {{total}}</span>
+                            </span>
                         </div>
-                        <div class="row d-flex align-items-end justify-content-center">
+                        
+                    </div>
+                    <div class="row d-flex align-items-end justify-content-center">
                             <a href="/checkout"><button class="checkout-btn">Checkout</button></a>
                         </div>
-                    </div>
             </div>
             </div>
     </body>

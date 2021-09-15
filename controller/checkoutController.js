@@ -1,10 +1,28 @@
 const db = require('../model/db.js');
 const Checkout = require('../model/checkout.js');
+const Cart = require('../model/cart.js');
 
 const checkoutController = {
     getCheckout: function(req,res){
-        console.log("hereeeee")
-        res.render('checkout', {success:"hidden", email : req.session.email, user : req.session.name});
+        var e = req.session.email;
+        let cart = [];
+        var query1 = {email: e};
+        var total = 0;
+        console.log("Checking checkout for " + e + "...");
+            db.findMany(Cart, query1, {_id:-1}, null, 0, function(x){
+                for(i in x){
+                    var temp ={
+                        item: x[i].item,
+                        qty: x[i].qty,
+                        price: x[i].price,
+                    }
+                    total = total + (x[i].qty * x[i].price)
+                    cart.push(temp)
+                }
+                console.log(total);
+                console.log(cart);
+                res.render('checkout', {res: cart, total: total, email: req.session.email, user: req.session.name});
+            });
     },
 
     postCheckout: function(req,res){
@@ -37,6 +55,13 @@ const checkoutController = {
                 console.log('Checkout for ' + fname + " " + lname);
                 res.render('checkout', {email : req.session.email, user:req.session.name})
             }
+        });
+    },
+
+    deleteCart: function(req,res){
+        var e = req.session.email;
+        db.deleteMany(Cart, function(x){
+            console.log("deleted cart for" +  e);
         });
     },
 };
