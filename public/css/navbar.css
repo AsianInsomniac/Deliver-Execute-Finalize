@@ -262,6 +262,13 @@ span.psw {
   text-align: left;
 } 
 
+#qtyInput{
+  margin-top: 10px;
+  height: 30px;
+  width: 40px;
+  text-align: center;
+}
+
 .row.mt-1.mb-1.cart-product {
   position: relative;
   /* left: 12%; */
@@ -306,6 +313,19 @@ span.psw {
     padding-left:0;
     
     width: 650px;
+}
+
+.delete-btn {
+  height: 50px;
+  background: rgba(216,191,178,1);
+  opacity: 1;
+  /* overflow: hidden; */
+  font-family: Playfair Display;
+  font-size: 18px;
+  /* right: auto; */
+  margin-left: auto;
+  margin-right: auto;
+  width: 436px;
 }
 
 /* .checkout-btn:hover{

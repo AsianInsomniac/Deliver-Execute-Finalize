@@ -18,6 +18,11 @@
     
 }
 
+.container-fluid.mt-5.mb-5.px-5 {
+    position: absolute;
+    margin-top: 0px;
+}
+
 .productpage-addcart:hover{
     background-color: #ddd;
 }

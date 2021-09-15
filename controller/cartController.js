@@ -16,11 +16,14 @@ const cartController = {
                         qty: x[i].qty,
                         price: x[i].price,
                     }
-                    total = total + (x[i].qty * x[i].price)
-                    cart.push(temp)
+                    total = total + (x[i].qty * x[i].price);
+                    console.log ("x[i].qty " + temp.qty + "asdfasdfasf");
+                    if (temp.qty != 0)
+                        cart.push(temp)
                 }
                 console.log(total);
                 console.log(cart);
+                
                 res.render('cart', {result: cart, total: total, email: req.session.email, user: req.session.name});
             });
     },
@@ -30,7 +33,7 @@ const cartController = {
         db.deleteOne(Cart, function(x){
             console.log("deleted one for" + e);
         });
-    }
+    },
 
 };
 

@@ -62,11 +62,13 @@ const productController = {
             db.findMany(Cart, query1, {_id:-1}, null, 0, function(x){
                 if (x){
                     for(j in x){
-                        console.log(x[j].item)
-                        if (x[j].item == i){                            
+                        console.log("asdfasdfsadfasf " + x[j]);
+                        if (x[j].item == i){
+                            if (x[j].qty == 0)
+                                db.deleteOne(Cart, {_id: x[j]._id});               
                             count++;
                             console.log(count + " ASKJDSADAS");
-                            res.render('fb' + i, {error: 'Item in cart already', email: req.session.email, user: req.session.name});
+                            res.render('fb' + i, {error: 'Item in cart updated', email: req.session.email, user: req.session.name});
                         }
                     }
                     if (count == 0)
