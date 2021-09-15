@@ -45,18 +45,22 @@
                     </div>
                     <div class="col">
                         <div class="container-fluid">
-                            <div class="row d-flex justify-content-center mt-5 mb-5" id="checkout-items">
+                            {{#if res}}
+                            {{#each res}}
+                            <div class="row d-flex justify-content-center mt-5 mb-5" id="checkout-items">                                
                                 <div class="row cart-product">
                                     <div class="col-4">
-                                        <img src="bag.jpg" alt="product" class="checkout-picture">
+                                        <img src="fb{{item}}.png" alt="product" class="checkout-picture">
                                     </div>
                                     <div class="col-8">
-                                        <div class="checkout-name">Lorem Ipsum</div>
-                                        <div class="checkout-price">Php 500</div>
-                                        <div class="checkout-quantity">Quantity: 1</div>
+                                        <div class="checkout-name">The Isla Fashion {{item}}</div>
+                                        <div class="checkout-price">Php {{price}}</div>
+                                        <div class="checkout-quantity">Quantity: {{qty}}</div>
                                     </div>
                                 </div>
                             </div>
+                            {{/each}}
+                            {{/if}}
                         </div>
                         <div class="container-fluid">
                             <hr>
@@ -65,7 +69,7 @@
                                     <div class="total">Total:</div>
                                 </div>
                                 <div class="col">
-                                    <div class="money">Php 1000</div>
+                                    <div class="money">Php {{total}}</div>
                                 </div>
                             </div>
                         </div>

@@ -7,6 +7,7 @@ const cartController = {
         var e = req.session.email;
         let cart = [];
         var query1 = {email: e};
+        var total = 0;
         console.log("Checking cart for " + e + "...");
             db.findMany(Cart, query1, {_id:-1}, null, 0, function(x){
                 for(i in x){
@@ -15,20 +16,21 @@ const cartController = {
                         qty: x[i].qty,
                         price: x[i].price,
                     }
-                    
+                    total = total + (x[i].qty * x[i].price)
                     cart.push(temp)
                 }
+                console.log(total);
                 console.log(cart);
-                res.render('cart', {result: cart, email: req.session.email, user: req.session.name});
+                res.render('cart', {result: cart, total: total, email: req.session.email, user: req.session.name});
             });
     },
 
-    deleteCart: function(req,res){
+    deleteOneCart: function(req, res){
         var e = req.session.email;
-        db.deleteMany(Cart, function(x){
-            console.log("deleted cart for" +  e);
+        db.deleteOne(Cart, function(x){
+            console.log("deleted one for" + e);
         });
-    },
+    }
 
 };
 
