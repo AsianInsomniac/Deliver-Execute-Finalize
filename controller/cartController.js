@@ -17,9 +17,11 @@ const cartController = {
                         price: x[i].price,
                     }
                     total = total + (x[i].qty * x[i].price);
-                    console.log ("x[i].qty " + temp.qty + "asdfasdfasf");
+                    
                     if (temp.qty != 0)
                         cart.push(temp)
+                    else
+                        db.deleteOne(Cart, {_id: x[i]._id});
                 }
                 console.log(total);
                 console.log(cart);
