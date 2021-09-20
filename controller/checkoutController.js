@@ -11,7 +11,7 @@ const checkoutController = {
         var query1 = {email: e};
         var total = 0;
         console.log("Checking checkout for " + e + "...");
-            db.findMany(Cart, query1, {_id:-1}, null, 0, function(x){
+            db.findMany(Cart, query1, {_id:-1}, null, 0, function(x){	
                 for(i in x){
                     var temp ={
                         item: x[i].item,
@@ -22,20 +22,26 @@ const checkoutController = {
                     cart.push(temp)
                 }
 				
-				var userData = {
-					res: cart,
-					total: total
-				}
-				
-				db.findOne(User, query1, null, function(y) {
-					if(y) {
-						userData["email"] = y.email;
-						userData["user"] = y.name;
-						userData["mobile"] = y.mobile;
-
-						res.render('checkout', userData);
+				if(cart.length > 0) {
+					var userData = {
+						res: cart,
+						total: total
 					}
-				});
+					
+					db.findOne(User, query1, null, function(y) {
+						if(y) {
+							userData["email"] = y.email;
+							userData["user"] = y.name;
+							userData["mobile"] = y.mobile;
+
+							res.render('checkout', userData);
+						}
+					});
+				}
+				else
+					res.redirect("/cart");
+				
+				
             });
     },
 
