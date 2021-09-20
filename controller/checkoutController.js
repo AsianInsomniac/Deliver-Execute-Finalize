@@ -1,4 +1,5 @@
 const db = require('../model/db.js');
+const User = require('../model/user.js');
 const Checkout = require('../model/checkout.js');
 const Cart = require('../model/cart.js');
 let alert = require('alert');
@@ -20,10 +21,21 @@ const checkoutController = {
                     total = total + (x[i].qty * x[i].price)
                     cart.push(temp)
                 }
-                console.log(total);
-                console.log(cart);
+				
+				var userData = {
+					res: cart,
+					total: total
+				}
+				
+				db.findOne(User, query1, null, function(y) {
+					if(y) {
+						userData["email"] = y.email;
+						userData["user"] = y.name;
+						userData["mobile"] = y.mobile;
 
-                res.render('checkout', {res: cart, total: total, email: req.session.email, user: req.session.name});
+						res.render('checkout', userData);
+					}
+				});
             });
     },
 

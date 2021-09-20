@@ -1,4 +1,4 @@
-input[type=text], input[type=number]{
+input[type=text], input[type=number], input[type=tel], input[type=url]{
     font-family: Playfair Display;
     width: 100%;
     padding: 12px 20px;
