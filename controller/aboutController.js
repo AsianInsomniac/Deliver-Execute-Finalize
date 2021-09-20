@@ -45,7 +45,7 @@ const aboutController = {
         db.insertOne(About, about, function(flag) {
             if(flag){
 				console.log('Created contact us for ' + name);
-				res.render('about', {email: req.session.email, user: req.session.name });
+				res.redirect('/about');
             }
         });
     },
