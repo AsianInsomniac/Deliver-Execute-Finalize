@@ -15,10 +15,6 @@ const controller = {
 		res.render('shop', {email: req.session.email, user: req.session.name});
 	},
 	
-	getAbout: function (req, res) {
-		res.render('about', {email: req.session.email, user: req.session.name});
-	},
-	
 	getGallery: function (req, res) {
 		res.render('gallery', {email: req.session.email, user: req.session.name});
 	},

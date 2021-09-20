@@ -1,9 +1,29 @@
 const db = require('../model/db.js');
 const About = require('../model/about.js');
+const User = require('../model/user.js');
 
 const aboutController = {
     getAbout: function(req, res){
-        res.render('about', {success:"hidden"});
+		var userData = {};
+		var e = "";
+		
+		if(req.session.email)
+			e = req.session.email;
+
+		var query = {
+			email: e
+		};
+			
+		
+		db.findOne(User, query, null, function(x) {
+			if(x) {
+				userData["email"] = x.email;
+				userData["user"] = x.name;
+				userData["mobile"] = x.mobile;
+			}
+			
+			res.render('about', userData);
+		});
     },
 
     postAbout: function(req, res){
@@ -24,8 +44,8 @@ const aboutController = {
 
         db.insertOne(About, about, function(flag) {
             if(flag){
-            console.log('Created contact us for ' + name);
-            res.render('about', {email: req.session.email, user: req.session.name });
+				console.log('Created contact us for ' + name);
+				res.render('about', {email: req.session.email, user: req.session.name });
             }
         });
     },
